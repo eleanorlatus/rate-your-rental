@@ -3280,10 +3280,6 @@ html {
   display: none;
 }
 
-.h-12 {
-  height: 3rem;
-}
-
 .w-full {
   width: 100%;
 }
@@ -3354,10 +3350,6 @@ html {
 
 .gap-6 {
   gap: 1.5rem;
-}
-
-.justify-self-end {
-  justify-self: end;
 }
 
 .justify-self-center {
