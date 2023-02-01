@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -23,6 +24,9 @@ connectDB();
 
 //Using EJS for views
 app.set("view engine", "ejs");
+app.set('views', path.join(__dirname, 'views'));
+// => Here we expose your dist folder
+app.use(express.static(path.join(__dirname, 'dist')))
 
 //Static Folder
 app.use(express.static("public"));
