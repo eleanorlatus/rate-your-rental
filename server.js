@@ -13,6 +13,7 @@ const mainRoutes = require("./routes/main");
 const postRoutes = require("./routes/posts");
 const commentRoutes = require("./routes/comments");
 const reviewRoutes = require("./routes/reviews");
+
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
 

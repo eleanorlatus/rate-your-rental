@@ -5,15 +5,11 @@ const ReviewSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
-  // propertyId: {
-  //   //type: mongoose.Schema.Types.ObjectId,
-  //   type: Number,
-  //   ref: "Property",
-  // },
-  propertyAddress:{
-    type: String,
-    required: true,
-  },
+//   propertyId: {
+//     //type: mongoose.Schema.Types.ObjectId,
+//     type: Number,
+//     ref: "Property",
+//   },
   title: {
     type: String,
     required: true,
@@ -22,12 +18,16 @@ const ReviewSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  tenancyStart: {
-    type: String,
-    require: true,
-  },
-  tenancyEnd: {
-    type: String,
+//   image: {
+//     type: String,
+//     require: false,
+//   },
+//   cloudinaryId: {
+//     type: String,
+//     require: false,
+//   },
+  tenancyDuration: {
+    type: Date,
     require: true,
   },
   createdAt: {
