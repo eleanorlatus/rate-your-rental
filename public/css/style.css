@@ -1,4 +1,4 @@
-/* body, navbar-custom{
+body, navbar-custom{
     background: #FCF0C8;
     background-image: none;
     color: #911F27
@@ -30,8 +30,4 @@ a.navbar-brand{
     color: #911F27;
     font-weight: bold;
     font-size: 32px;
-} */
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+}
