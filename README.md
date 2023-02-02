@@ -16,5 +16,5 @@
 ---
 
 # Run
-
+`npm run build-css`
 `npm start`
