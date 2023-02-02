@@ -1,6 +1,6 @@
 <%- include('partials/header') -%>
 
-<main class="container">
+<main class="container bg-base-200">
   <div class="row justify-content-center">
     <section class="col-6 mt-5">
       <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
@@ -35,6 +35,7 @@
       </form>
     </section>
   </div>
+
 </main>
 
 <%- include('partials/footer') -%>
