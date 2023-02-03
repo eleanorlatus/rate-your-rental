@@ -28,7 +28,7 @@ const ReviewSchema = new mongoose.Schema({
 //   },
   tenancyDuration: {
     type: Date,
-    require: true,
+    require: false,
   },
   createdAt: {
     type: Date,
