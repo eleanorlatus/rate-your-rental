@@ -18,17 +18,13 @@ const ReviewSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-//   image: {
-//     type: String,
-//     require: false,
-//   },
-//   cloudinaryId: {
-//     type: String,
-//     require: false,
-//   },
-  tenancyDuration: {
-    type: Date,
-    require: false,
+  tenancyFrom: {
+    type: String,
+    require: true,
+  },
+  tenancyTo: {
+    type: String,
+    require: true,
   },
   createdAt: {
     type: Date,

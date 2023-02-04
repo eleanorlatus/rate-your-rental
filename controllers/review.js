@@ -10,15 +10,13 @@ module.exports = {
       },
     createReview: async (req, res) => {
       try {
-        /*await Review.create({            
-            likes: 0,
+        await Review.create({
             user: req.user.id,
-            // propertyId: 0,
             title: req.body.title,
-            reviewBody: req.body.reviewBody,
-            tenancyDuration: req.body.tenancyDuration
-
-          });*/
+            reviewBody: req.body.body,
+            tenancyFrom: req.body.tenancyFrom,
+            tenancyTo: req.body.tenancyTo
+          });
         console.log("Review has been added!");
         console.log(req.body);
         res.redirect("/reviews");
