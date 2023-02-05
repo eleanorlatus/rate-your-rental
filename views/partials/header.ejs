@@ -21,26 +21,32 @@
     <link rel="stylesheet" href="/style.css">
   </head>
   <body class="bg-base-200">
-
-    <div class="navbar bg-base-200">
+        <!-- navbar -->
+    <div class="navbar bg-base-200 py-4 px-4">
       <div class="flex-1">
         <a class="btn btn-primary normal-case text-xl" href="/">Rate your rental</a>
-      </div> 
-      <div class="flex-none gap-2 ">
-        <div class="form-control bg-base-200">
-          <input type="text" placeholder="Search" class="input input-bordered" />
-        </div>
-        <div class="dropdown dropdown-end ">
-          <label tabindex="0" class="btn btn-primary btn-circle avatar">
-            <div class="w-10 rounded-full">
-              <img src="/images/stock/cat.jpg" />
-            </div>
-          </label>
-          <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
-            <li><a href="/login">Log in</a></li>
-            <li><a href="/signup">Sign up</a></li>
-          </ul>
+      </div>
+        <!-- search bar -->
+      <div class="flex-none">
+        <div class="">
+          <div class="form bg-base-200 mr-1">
+            <input type="text" placeholder="Search" class="input input-bordered" />
+          </div>
         </div>
       </div>
+        <!-- avatar -->
+        
+      <div class="flex-none">
+        <ul class="menu menu-horizontal px-1">
+          <li><a href="/feed">Feed</a></li>
+          <li><a href="/property">Property</a></li>
+          <li><a href="/reviews">Reviews</a></li>
+        </ul>
+      </div>
+      <label tabindex="0" class="btn btn-secondary btn-circle avatar mx-2">
+        <div class="w-10 rounded-full">
+          <img src="/images/stock/cat.jpg" />
+        </div>
+      </label>
     </div>
-
+  </div>
