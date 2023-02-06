@@ -10,6 +10,10 @@ const ReviewSchema = new mongoose.Schema({
 //     type: Number,
 //     ref: "Property",
 //   },
+  propertyAddress:{
+    type: String,
+    required: true,
+  },
   title: {
     type: String,
     required: true,

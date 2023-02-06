@@ -4,12 +4,12 @@
   <div class="grid grid-cols-3 gap-4 py-5">
       <% for(var i=0; i<review.length; i++) {%>
     <div class="card w-96 bg-base-100 shadow-xl">
-      <figure><img src="/images/stock/cat.jpg" alt="Shoes" /></figure>
+      <figure><img src="/images/stock/bedroom.jpg" alt="Shoes" /></figure>
       <div class="card-body">
-        <h2 class="card-title"><%= review[i].title%></h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
+        <h2 class="card-title"><%= review[i].propertyAddress%></h2>
+        <p><%= review[i].title%></p>
         <div class="card-actions justify-end">
-          <button class="btn btn-primary"><a href="/property">View</a></button>
+          <button class="btn btn-primary"><a href="/property">View Property</a></button>
         </div>
       </div>
     </div>

@@ -12,6 +12,7 @@ module.exports = {
       try {
         await Review.create({
             user: req.user.id,
+            propertyAddress: req.body.address,
             title: req.body.title,
             reviewBody: req.body.body,
             tenancyFrom: req.body.tenancyFrom,
