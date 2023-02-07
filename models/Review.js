@@ -21,7 +21,7 @@ const ReviewSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  reviewBody: {
+  body: {
     type: String,
     required: true,
   },

@@ -8,6 +8,7 @@ Notes:
 Next steps:
 - profile page
 - input EJS
+- nav bar if logged in or not
 - responsiveness/mobile-friendly
 
 Optimisations:
@@ -19,7 +20,7 @@ reviews:
 
 "This rental property is a fantastic choice with top-notch facilities and a great location. The landlord is responsive and any maintenance issues are quickly taken care of. I had a great experience here and would definitely recommend it."
 
-"I recently rented a cosy and spacious flat with all the essentials, and it exceeded my expectations. The landlord was always available and helpful, even when I needed an extra set of keys. I would definitely recommend this rental to anyone looking for a great living experience."
+"I recently rented a cosy and spacious house with all the essentials, and it exceeded my expectations. The landlord was always available and helpful, even when I needed an extra set of keys. I would definitely recommend this rental to anyone looking for a great living experience."
 
 "Unfortunately, my experience at this rental property was not ideal. The facilities were not well-maintained and the landlord was unresponsive, making our stay here a challenge. We had to constantly follow up on repairs, such as a leaky roof and faulty heating. I would not recommend this rental."
 

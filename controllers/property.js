@@ -5,9 +5,9 @@ module.exports = {
     getProperty: async (req, res) => {
         try {
         const property = await Property.findById(req.params.id);
-        console.log(property)
-        const reviews = await Review.find({ propertyId: req.params.id}).sort({ createdAt: "desc" }).lean();
-        res.render("property.ejs", { property: property, reviews: reviews});
+        console.log(property._id)
+        const review = await Review.find({ propertyId: req.params.id}).sort({ createdAt: "desc" }).lean();
+        res.render("property.ejs", { property: property, review: review});
         } catch (err) {
           console.log(err);
         }

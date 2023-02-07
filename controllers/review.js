@@ -12,7 +12,6 @@ module.exports = {
     createReview: async (req, res) => {
       try {
           let property = await Property.find({ postcode: req.body.postcode, streetName: req.body.streetName});
-          
           if(property.length == 0){
             await Property.create({
               streetName: req.body.streetName.toLowerCase(),
@@ -28,7 +27,7 @@ module.exports = {
             streetName: req.body.streetName.toLowerCase(),
             postcode: req.body.postcode.toLowerCase(),
             title: req.body.title,
-            reviewBody: req.body.body,
+            body: req.body.body,
             tenancyFrom: req.body.tenancyFrom,
             tenancyTo: req.body.tenancyTo
           });

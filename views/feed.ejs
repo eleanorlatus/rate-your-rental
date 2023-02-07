@@ -9,7 +9,7 @@
         <h2 class="card-title"><%= property[i].streetName%>, <%= property[i].postcode.toUpperCase()%></h2>
         <!-- <p><%= property[i].title%></p> -->
         <div class="card-actions justify-end">
-          <button class="btn btn-primary"><a href="/property/<%= property[i]._id%>">View Property</a></button>
+          <a href="/property/<%= property[i]._id%>"><button class="btn btn-primary">View Property</button></a>
         </div>
       </div>
     </div>

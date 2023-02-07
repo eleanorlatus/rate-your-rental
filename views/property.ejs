@@ -21,19 +21,19 @@
   </div>
 </div>
 <!-- review -->
-<div class="border-2 border-amber-600 px-8 py-4"> <!-- outer review div-->
-  <% for(var i=0; i<property.length; i++) {%>
+<% for(var i=0; i<review.length; i++) {%>
+<div class="border-2 border-amber-600 px-8 py-4 my-4"> <!-- outer review div-->
     <div class="pb-2"> <!-- posted by and tenancy dates-->
         <p>Review posted by USER</p>
-        <p>Tenancy from X to Y</p>
+        <p>Tenancy from <%= review[i].tenancyFrom%> to <%= review[i].tenancyTo%></p>
     </div>
     <div> <!-- review title and body-->
-        <h1 class="text-2xl font-bold pb-2">Review title</h1>
-        <p class="pt-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, dolores?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea nihil ut maiores. Enim cumque, eaque at rem, sequi architecto maiores qui nemo esse modi nobis nesciunt molestiae ducimus cum officiis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam sit quas amet, inventore debitis atque nobis iusto mollitia possimus in commodi cupiditate recusandae distinctio, similique, quod adipisci culpa voluptatem! Adipisci unde id maxime dolores modi incidunt nihil sit, illo asperiores.</p>
+        <h1 class="text-2xl font-bold pb-2"><%= review[i].title%></h1>
+        <p class="pt-2"><%= review[i].body%></p>
     </div>
-    <% } %>
 </div>
 
 </div>
+<% } %>
 </div>
 <%- include('partials/footer') -%>
