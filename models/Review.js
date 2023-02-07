@@ -5,12 +5,15 @@ const ReviewSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
-//   propertyId: {
-//     //type: mongoose.Schema.Types.ObjectId,
-//     type: Number,
-//     ref: "Property",
-//   },
-  propertyAddress:{
+  propertyId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Property",
+  },
+  streetName:{
+    type: String,
+    required: true,
+  },
+  postcode:{
     type: String,
     required: true,
   },
