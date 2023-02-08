@@ -1,15 +1,17 @@
 Notes:
 - form not working on review page (done)
-- review form body bigger
-- add ejs to property page
-- add ejs to feed
-- create property model
+- review form body bigger (done)
+- add ejs to property page (done)
+- add ejs to feed (done)
+- create property model (done)
 
 Next steps:
 - profile page
 - input EJS
 - nav bar if logged in or not
 - responsiveness/mobile-friendly
+- better image for index page
+- redesign feed?
 
 Optimisations:
 - add star ratings and categories

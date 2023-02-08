@@ -17,6 +17,14 @@ const ReviewSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  tenancyFrom: {
+    type: String,
+    require: true,
+  },
+  tenancyTo: {
+    type: String,
+    require: true,
+  },
   title: {
     type: String,
     required: true,
@@ -25,11 +33,11 @@ const ReviewSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  tenancyFrom: {
+  image: {
     type: String,
     require: true,
   },
-  tenancyTo: {
+  cloudinaryId: {
     type: String,
     require: true,
   },
