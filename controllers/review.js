@@ -5,7 +5,7 @@ const Property = require("../models/Property.js");
 module.exports = {
     getReviewPage: async (req, res) => {
         try {
-          res.render("reviews.ejs");
+          res.render("reviews.ejs", { user: req.user});
         } catch (err) {
           console.log(err);
         }
