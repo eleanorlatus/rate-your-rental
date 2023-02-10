@@ -7,11 +7,11 @@
     </div>
 <!-- images in grid-->
 
-<div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 py-4 border-2 border-amber-600 my-4">
+<div class="flex md:flex-row sm:flex-col justify-evenly py-4 border-2 border-amber-600 my-4 gap-6">
   <% for(var i=0; i<review.length; i++) {%>
     <!-- image -->
     <% if(review[i].image) {%>
-    <div class="basis-1/4 bg-base-100 shadow-xl">
+    <div class="sm:mx-4 md:mx-0">
       <img src="<%= review[i].image%>">
       <span class="mx-4">Image posted by <%= user.userName%></span>
   </div>
