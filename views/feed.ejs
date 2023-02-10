@@ -1,9 +1,9 @@
 <%- include('partials/header') -%>
 <div class="container mx-auto px-4 py-5">
   <!-- row 1 -->
-  <div class="grid grid-cols-3 gap-4">
+  <div class="grid xl:grid-cols-3 gap-4 lg:grid-cols-2 md:grid-cols-1 ">
       <% for(var i=0; i<property.length; i++) {%>
-    <div class="card w-96 bg-base-100 shadow-xl">
+    <div class="card w-96 bg-base-100 shadow-xl mx-auto">
       <figure><img src="/images/stock/bedroom.jpg" alt="Shoes" /></figure>
       <div class="card-body">
         <h2 class="card-title"><%= property[i].streetName%>, <%= property[i].postcode.toUpperCase()%></h2>
