@@ -6,26 +6,27 @@
         <h1 class="text-2xl font-bold"> <%= property.streetName%>, <%= property.postcode.toUpperCase()%></h1>
     </div>
 <!-- images in grid-->
+
 <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 py-4 border-2 border-amber-600 my-4">
-    <!-- img1 -->
+  <% for(var i=0; i<review.length; i++) {%>
+    <!-- image -->
+    <% if(review[i].image) {%>
     <div class="basis-1/4 bg-base-100 shadow-xl">
-      <img src="/images/stock/bedroom.jpg" alt="">
+      <img src="<%= review[i].image%>">
+      <span class="mx-4">Image posted by <%= user.userName%></span>
   </div>
-<!-- img2 -->
-  <div class="basis-1/4 bg-base-100 shadow-xl">
-    <img src="/images/stock/kitchen.jpg" alt="">
-  </div>
-<!-- img3 -->
-  <div class="basis-1/4 bg-base-100 shadow-xl">
-    <img src="/images/stock/livingroom.jpg" alt="">
-  </div>
+  <% } %>
+  <% } %>
 </div>
 <!-- review -->
 <% for(var i=0; i<review.length; i++) {%>
 <div class="border-2 border-amber-600 px-8 py-4 my-4"> <!-- outer review div-->
     <div class="pb-2"> <!-- posted by and tenancy dates-->
-        <p>Review posted by USER</p>
-        <p>Tenancy from <%= review[i].tenancyFrom%> to <%= review[i].tenancyTo%></p>
+        <p>Review posted by <%= user.userName%></p>
+        <% if(review[i].tenancyFrom && review[i].tenancyTo != "") {%>
+          <p>Tenancy from <%= review[i].tenancyFrom%> to <%= review[i].tenancyTo%></p>
+        <% } %>
+        <!--<img src="<%= review[i].image%>">-->
     </div>
     <div> <!-- review title and body-->
         <h1 class="text-2xl font-bold pb-2"><%= review[i].title%></h1>
