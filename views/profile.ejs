@@ -1,46 +1,43 @@
 <%- include('partials/header') -%>
-<div class="container">
-  <div class="row mt-5">
-      <div class="col-3">
-          <div>
-            <div>
-              <img src="<%= user.profilePhoto %>" alt="" class="pb-2">
-            </div>
-            <div class="pb-4">
-              <h3 class="text-m font-bold pb-2">Change your profile photo</h3>
-              <form class="w-full max-w-lg mx-auto" action="/profile/updateProfilePhoto" enctype="multipart/form-data" method="POST">
-                <label for="imgUpload" class="form-label">Image</label>
-                <input type="file" class="form-control" id="imageUpload" name="file">
-              <button type="submit" class="btn btn-primary btn-sm mt-2" value="Upload">Submit</button>
-              </form>
-            </div>
-              <p><strong>User Name</strong>: <%= user.userName %></p>
-              <p><strong>Email</strong>: <%= user.email %></p>
-              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
-          </div>
-      </div>
-      <div class="col-9 px-6">
-        <ul class="row list-unstyled">
-          <li><span class="text-2xl font-bold underline underline-offset-4 pb-2">Your reviews</span></li>
-          <% for(var i=0; i<review.length; i++) {%>
-            <div class="border-2 border-amber-600 px-8 py-4 my-4"> <!-- outer review div-->
-                <div class="pb-2"> <!-- posted by and tenancy dates-->
-                    
-                  <h3 class="text-l font-bold pb-2">Review for <%= review[i].streetName%>, <%= review[i].postcode%></h3>
-                    <% if(review[i].tenancyFrom && review[i].tenancyTo != "") {%>
-                      <p>Tenancy from <%= review[i].tenancyFrom%> to <%= review[i].tenancyTo%></p>
-                    <% } %>
-                    <!--<img src="<%= review[i].image%>">-->
-                </div>
-                <div> <!-- review title and body-->
-                    <h1 class="text-2xl font-bold pb-2"><%= review[i].title%></h1>
-                    <p class="pt-2"><%= review[i].body%></p>
-                </div>
-            </div>
-            <% } %>
-        </ul>
-      </div>  
+<div class="lg:grid lg:grid-cols-3 gap-2 mt-4 mx-4">
+<div class="lg:col-span-1 sm:grid sm:grid-cols-2 lg:block">
+    <!-- profile image -->
+    <div class="pb-4">
+      <img src="<%= user.profilePhoto %>" alt="" class="pb-2 w-44">
+      <form class="w-full max-w-lg mx-auto" action="/profile/updateProfilePhoto" enctype="multipart/form-data" method="POST">
+        <label for="imgUpload" class="form-label">Change your profile photo</label>
+        <input type="file" class="form-control file-input file-input-bordered file-input-sm w-full max-w-xs" id="imageUpload" name="file">
+      <button type="submit" class="btn btn-primary btn-sm mt-2" value="Upload">Submit</button>
+      </form>
     </div>
-  </div>
+    <!-- user info -->
+    <div>
+    <p><strong>User Name</strong>: <%= user.userName %></p>
+    <p><strong>Email</strong>: <%= user.email %></p>
+    <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+    </div>
+</div>
+<div class="lg:col-span-2 mx-2">
+    <ul class="row list-unstyled">
+      <li><span class="text-2xl font-bold underline underline-offset-4 pb-2">Your reviews</span></li>
+      <% for(var i=0; i<review.length; i++) {%>
+        <!-- outer review div-->
+        <div class="border-2 border-amber-600 px-8 py-4 my-4">
+            <!-- address and tenancy dates-->
+            <div class="pb-2"> 
+              <h3 class="text-l font-bold pb-2">Review for <%= review[i].streetName%>, <%= review[i].postcode%></h3>
+                <% if(review[i].tenancyFrom && review[i].tenancyTo != "") {%>
+                  <p>Tenancy from <%= review[i].tenancyFrom%> to <%= review[i].tenancyTo%></p>
+                <% } %>
+            </div>
+            <!-- review title and body-->
+            <div> 
+              <h1 class="text-2xl font-bold pb-2"><%= review[i].title%></h1>
+              <p class="pt-2"><%= review[i].body%></p>
+            </div>
+        </div>
+        <% } %>
+    </ul>
+</div>
 </div>
 <%- include('partials/footer') -%>
