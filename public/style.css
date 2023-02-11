@@ -3230,6 +3230,11 @@ html {
   margin-right: 0.5rem;
 }
 
+.mx-6 {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
 .mt-5 {
   margin-top: 1.25rem;
 }
@@ -3402,6 +3407,16 @@ html {
   padding-right: 0.25rem;
 }
 
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .pt-3 {
   padding-top: 0.75rem;
 }
@@ -3464,6 +3479,14 @@ html {
   color: hsl(var(--bc) / var(--tw-text-opacity));
 }
 
+.underline {
+  text-decoration-line: underline;
+}
+
+.underline-offset-4 {
+  text-underline-offset: 4px;
+}
+
 .shadow-xl {
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
@@ -3481,14 +3504,6 @@ ul.menu li a:hover{
 }
 
 @media (min-width: 640px) {
-  .sm\:visible {
-    visibility: visible;
-  }
-
-  .sm\:invisible {
-    visibility: hidden;
-  }
-
   .sm\:mx-4 {
     margin-left: 1rem;
     margin-right: 1rem;
@@ -3496,10 +3511,6 @@ ul.menu li a:hover{
 
   .sm\:block {
     display: block;
-  }
-
-  .sm\:hidden {
-    display: none;
   }
 
   .sm\:flex-col {
@@ -3520,10 +3531,6 @@ ul.menu li a:hover{
 
   .md\:mb-0 {
     margin-bottom: 0px;
-  }
-
-  .md\:block {
-    display: block;
   }
 
   .md\:w-2\/3 {
@@ -3556,14 +3563,6 @@ ul.menu li a:hover{
 }
 
 @media (min-width: 1024px) {
-  .lg\:visible {
-    visibility: visible;
-  }
-
-  .lg\:invisible {
-    visibility: hidden;
-  }
-
   .lg\:block {
     display: block;
   }
