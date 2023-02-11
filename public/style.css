@@ -2625,6 +2625,10 @@ html {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.file-input-bordered {
+  --tw-border-opacity: 0.2;
+}
+
 .file-input:focus {
   outline: 2px solid hsla(var(--bc) / 0.2);
   outline-offset: 2px;
@@ -3045,6 +3049,20 @@ html {
   font-size: 0.75rem;
 }
 
+.file-input-sm {
+  height: 2rem;
+  padding-right: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 2rem;
+}
+
+.file-input-sm::file-selector-button {
+  margin-right: 0.75rem;
+  height: 1.875rem;
+  min-height: 1.875rem;
+  font-size: 0.875rem;
+}
+
 .menu-horizontal {
   display: inline-flex;
   width: -moz-max-content;
@@ -3427,6 +3445,10 @@ html {
 
 .pt-2 {
   padding-top: 0.5rem;
+}
+
+.pb-4 {
+  padding-bottom: 1rem;
 }
 
 .text-center {
