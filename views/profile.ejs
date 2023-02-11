@@ -4,11 +4,15 @@
       <div class="col-3">
           <div>
             <div>
-              <img src="images/stock/cat.jpg" alt="" class="pb-2">
+              <img src="<%= user.profilePhoto %>" alt="" class="pb-2">
             </div>
             <div class="pb-4">
               <h3 class="text-m font-bold pb-2">Change your profile photo</h3>
-              <input type="file" class="file-input file-input-sm file-input-bordered file-input-primary w-full max-w-xs" />
+              <form class="w-full max-w-lg mx-auto" action="/profile/updateProfilePhoto" enctype="multipart/form-data" method="POST">
+                <label for="imgUpload" class="form-label">Image</label>
+                <input type="file" class="form-control" id="imageUpload" name="file">
+              <button type="submit" class="btn btn-primary btn-sm mt-2" value="Upload">Submit</button>
+              </form>
             </div>
               <p><strong>User Name</strong>: <%= user.userName %></p>
               <p><strong>Email</strong>: <%= user.email %></p>

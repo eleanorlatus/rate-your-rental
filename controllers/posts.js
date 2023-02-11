@@ -5,14 +5,6 @@ const Review = require("../models/Review.js");
 const Property = require("../models/Property.js");
 
 module.exports = {
-  getProfile: async (req, res) => {
-    try {
-      const reviews = await Review.find({ user: req.user.id });
-      res.render("profile.ejs", { review: reviews, user: req.user });
-    } catch (err) {
-      console.log(err);
-    }
-  },
   getFeed: async (req, res) => {
     try {
       const property = await Property.find().sort({ createdAt: "desc" }).lean();
