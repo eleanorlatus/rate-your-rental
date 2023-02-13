@@ -13,7 +13,6 @@
     <% if(review[i].image) {%>
     <div class="sm:mx-4 md:mx-0">
       <img src="<%= review[i].image%>">
-      <span class="mx-4">Image posted by <%= user.userName%></span>
   </div>
   <% } %>
   <% } %>
@@ -22,7 +21,6 @@
 <% for(var i=0; i<review.length; i++) {%>
 <div class="border-2 border-amber-600 px-8 py-4 my-4"> <!-- outer review div-->
     <div class="pb-2"> <!-- posted by and tenancy dates-->
-        <p>Review posted by <%= user.userName%></p>
         <% if(review[i].tenancyFrom && review[i].tenancyTo != "") {%>
           <p>Tenancy from <%= review[i].tenancyFrom%> to <%= review[i].tenancyTo%></p>
         <% } %>
