@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-ul.menu li a:hover{
+ul.menu li a:hover, h3 a:hover{
 color: black;
 }
 

@@ -7,11 +7,11 @@
     </div>
 <!-- images in grid-->
 
-<div class="flex flex-col lg:flex-row justify-evenly py-4 border-2 border-amber-600 my-4 gap-6">
+<div class="flex flex-col lg:flex-row justify-evenly py-4 my-4 gap-6">
   <% for(var i=0; i<review.length; i++) {%>
     <!-- image -->
     <% if(review[i].image) {%>
-    <div class="sm:mx-4 md:mx-0 lg:w-1/2 justify-center">
+    <div class="sm:mx-4 md:mx-0 lg:w-1/2">
       <img src="<%= review[i].image%>" class="">
   </div>
   <% } %>
@@ -19,7 +19,7 @@
 </div>
 <!-- review -->
 <% for(var i=0; i<review.length; i++) {%>
-<div class="border-2 border-amber-600 px-8 py-4 my-4"> <!-- outer review div-->
+<div class="border-2 border-primary-focus px-8 py-4 my-4"> <!-- outer review div-->
     <div class="pb-2"> <!-- posted by and tenancy dates-->
         <% if(review[i].tenancyFrom && review[i].tenancyTo != "") {%>
           <p>Tenancy from <%= review[i].tenancyFrom%> to <%= review[i].tenancyTo%></p>
@@ -32,6 +32,9 @@
     </div>
 </div>
 <% } %>
+<h3 class="text-xl font-bold pb-2">Want to leave a review for this property? <a href="/login" class="underline underline-offset-4 text-primary-focus">Log in</a> or <a href="/signup" class="underline underline-offset-4 text-primary-focus">create an account</a> today.</h3>
 </div>
+
+
 </div>
 <%- include('partials/footer') -%>
