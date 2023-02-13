@@ -5,6 +5,8 @@
 
 Rate your rental is a social media platform that allows renters in the UK to rate their rental property and landlords. Our aim is to help people make informed decisions and elevate their rental experience. The site is responsive so works on both desktop and mobile.
 
+You can view the demo here: <a href="https://rateyourrental.cyclic.app">https://rateyourrental.cyclic.app</a>
+
 ## Getting started
 
 ### Installation
