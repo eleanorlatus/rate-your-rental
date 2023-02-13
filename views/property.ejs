@@ -1,5 +1,5 @@
 <%- include('partials/header') -%>
-<div class="container mx-auto px-20 py-5">
+<div class="container mx-auto px-4 lg:px-20 py-5">
 <!-- header -->
 <div> <!-- whole property div-->
     <div>
@@ -7,11 +7,11 @@
     </div>
 <!-- images in grid-->
 
-<div class="flex md:flex-row sm:flex-col justify-evenly py-4 border-2 border-amber-600 my-4 gap-6">
+<div class="flex flex-col lg:flex-row justify-evenly py-4 border-2 border-amber-600 my-4 gap-6">
   <% for(var i=0; i<review.length; i++) {%>
     <!-- image -->
     <% if(review[i].image) {%>
-    <div class="sm:mx-4 md:mx-0 w-1/2 justify-center">
+    <div class="sm:mx-4 md:mx-0 lg:w-1/2 justify-center">
       <img src="<%= review[i].image%>" class="">
   </div>
   <% } %>
