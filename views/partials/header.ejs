@@ -55,7 +55,11 @@
       <div class="hidden lg:block">
         <label tabindex="0" class="btn btn-secondary btn-circle avatar mx-2">
           <div class="w-10 rounded-full">
-            <a href="/profile"><img src="<%= user.profilePhoto %>" /></a>
+            <% if(user == undefined){ %>    
+            <a href="/profile"><img src="/images/stock/cat.jpg" /></a>
+            <% } else{ %> 
+              <a href="/profile"><img src="<%= user.profilePhoto %>" /></a>
+            <% } %>
           </div>
         </label>
         </div>
@@ -64,7 +68,11 @@
       <div class="dropdown dropdown-end">
         <label tabindex="0" class="btn btn-secondary btn-circle avatar mx-2">
           <div class="w-10 rounded-full">
-           <img src="<%= user.profilePhoto %>"/>
+            <% if(user == undefined){ %>    
+              <img src="/images/stock/cat.jpg" />
+              <% } else{ %> 
+                <img src="<%= user.profilePhoto %>" />
+              <% } %>
           </div>
         </label>
         <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
