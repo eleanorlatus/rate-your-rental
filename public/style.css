@@ -3263,6 +3263,10 @@ html {
   display: none;
 }
 
+.h-3\/4 {
+  height: 75%;
+}
+
 .w-96 {
   width: 24rem;
 }
@@ -3281,6 +3285,14 @@ html {
 
 .w-52 {
   width: 13rem;
+}
+
+.w-3\/4 {
+  width: 75%;
+}
+
+.w-1\/2 {
+  width: 50%;
 }
 
 .max-w-lg {
@@ -3309,6 +3321,10 @@ html {
 
 .justify-end {
   justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .justify-evenly {
