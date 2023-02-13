@@ -3407,6 +3407,10 @@ html {
   padding-top: 0.75rem;
 }
 
+.pb-5 {
+  padding-bottom: 1.25rem;
+}
+
 .pb-4 {
   padding-bottom: 1rem;
 }
@@ -3491,6 +3495,16 @@ html {
 
 ul.menu li a:hover{
   color: black;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  margin-top: auto;
 }
 
 @media (min-width: 640px) {
