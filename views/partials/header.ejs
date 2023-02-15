@@ -33,7 +33,9 @@
           <div class="flex-none">
         <ul class="menu menu-horizontal px-1">
           <li class="mx-1"><a href="/feed">Feed</a></li>
+          <% if(user != undefined){ %>
           <li class="mx-1"><a href="/reviews">Create review</a></li>
+          <% } %>
           <!-- hide if logged in -->
           <% if(user == undefined){ %>          
           <li class="mx-1"><a href="/signup">Sign up</a></li>
