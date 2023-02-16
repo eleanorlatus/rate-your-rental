@@ -13,8 +13,8 @@ module.exports = {
     createReview: async (req, res) => {
       try {
         // check if property already exists in the DB, if not then create one
-        const streetName = req.body.streetName.toLowerCase()
-        const postcode = req.body.postcode.toLowerCase()
+        const streetName = req.body.streetName.split(" ").map((x)=>x[0].toUpperCase() + x.slice(1)).join(" ")
+        const postcode = req.body.postcode.toUpperCase()
 
           let property = await Property.find({ postcode: postcode, streetName: streetName});
           if(property.length == 0){
@@ -26,12 +26,20 @@ module.exports = {
           }else{
               console.log("Property already exists in database, adding review")
             }
-          
           property = await Property.find({ postcode: postcode, streetName: streetName});
           console.log(property)
 
-          // Upload image to cloudinary
-          const result = await cloudinary.uploader.upload(req.file.path);
+          let result = ""
+          // If an image has been uploaded by the user, upload the image to cloudinary
+        if(req.file !== undefined){
+         result = await cloudinary.uploader.upload(req.file.path);
+        }else{
+          result=
+          {
+            secure_url: "",
+            public_id: ""
+          }
+        }
           await Review.create({
             user: req.user.id,
             propertyId: property[0]._id,
