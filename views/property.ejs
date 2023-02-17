@@ -12,6 +12,7 @@
     <% if(review[i].image) {%>
     <div class="sm:mx-4 md:mx-0 lg:w-1/2">
       <img src="<%= review[i].image%>" class="">
+      <p>Image posted by <%= review[i].user.userName%></p>
   </div>
   <% } %>
   <% } %>

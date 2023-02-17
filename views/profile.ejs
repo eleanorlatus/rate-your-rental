@@ -2,19 +2,15 @@
 <div class="lg:grid lg:grid-cols-3 gap-2 mt-4 mx-4">
 <div class="lg:col-span-1 sm:grid sm:grid-cols-2 lg:block">
     <!-- profile image -->
-    <div class="pb-4">
-      <img src="<%= user.profilePhoto %>" alt="" class="pb-2 w-44">
-      <form class="w-full max-w-lg mx-auto" action="/profile/updateProfilePhoto" enctype="multipart/form-data" method="POST">
-        <label for="imgUpload" class="form-label">Change your profile photo</label>
-        <input type="file" class="form-control file-input file-input-bordered file-input-sm w-full max-w-xs" id="imageUpload" name="file">
-      <button type="submit" class="btn btn-primary btn-sm mt-2" value="Upload">Submit</button>
-      </form>
+    <div class="pb-2">
+      <img src="<%= user.profilePhoto %>" alt="" class="pb-2 w-24">
     </div>
     <!-- user info -->
     <div class="pb-4">
     <p><strong>User Name</strong>: <%= user.userName %></p>
     <p><strong>Email</strong>: <%= user.email %></p>
-    <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+    <a href="/edit"><button class="btn btn-primary mt-2">Edit profile</button></a><br>
+    <a href="/logout" class="col-3 btn btn-primary my-2">Logout</a>
     </div>
 </div>
 <div class="lg:col-span-2 mx-2">
@@ -41,3 +37,10 @@
 </div>
 </div>
 <%- include('partials/footer') -%>
+
+
+<!--<form class="w-full max-w-lg mx-auto" action="/profile/updateProfilePhoto" enctype="multipart/form-data" method="POST">
+  <label for="imgUpload" class="form-label">Change your profile photo</label>
+  <input type="file" class="file-input file-input-bordered file-input-xs w-5/6 max-w-xs" id="imageUpload" name="file"><br>
+<button type="submit" class="btn btn-primary btn-sm mt-2" value="Upload">Submit</button>
+</form>-->
