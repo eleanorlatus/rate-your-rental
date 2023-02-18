@@ -28,9 +28,7 @@ module.exports = {
           if(req.body.userName != ""){
             await User.findOneAndUpdate(
               { _id: req.user.id },
-              {
-                userName: req.body.userName
-              }
+              { userName: req.body.userName }
             );
             console.log("Successfully changed username")
           }
