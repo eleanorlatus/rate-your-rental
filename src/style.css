@@ -16,6 +16,14 @@ body {
     margin-top: auto;
   }
 
-.footer a:hover, .footer i:hover{
+footer a{
+color: black;
+}
+
+a{
   color: rgb(223, 167, 60)
+}
+
+a:hover, i:hover{
+  color: rgb(187, 137, 43)
 }
