@@ -1,14 +1,14 @@
 <%- include('partials/header') -%>
   <main class="container pb-5">
         <div class="row justify-content-center">
-            <section class="col-6 mt-5">
-                <form class="w-full max-w-lg mx-auto grid grid-cols-2 gap-4" action="/edit/editProfile" enctype="multipart/form-data" method="POST">
+            <section class="col-10 md:col-6 mt-5">
+                <form class="w-full max-w-lg mx-auto md:grid md:grid-cols-2 gap-4" action="/edit/editProfile" enctype="multipart/form-data" method="POST">
                   <!-- col-1 -->
                   <div class="col-span-2 justify-self-center">
                   <div class="mb-3">
                     <img src="<%= user.profilePhoto %>" alt="" class="pb-2 w-24">
                     <label for="imgUpload" class="form-label">Change your profile photo</label><br>
-                    <input type="file" class="file-input file-input-bordered file-input-xs w-5/6 max-w-xs" id="imageUpload" name="file"><br>
+                    <input type="file" class="file-input file-input-bordered file-input-xs md:w-5/6 max-w-xs" id="imageUpload" name="file"><br>
                   </div>
                   </div>
                 <!-- col 2 -->

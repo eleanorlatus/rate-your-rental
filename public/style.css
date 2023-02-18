@@ -3570,6 +3570,10 @@ a:hover, i:hover{
     margin-bottom: 0px;
   }
 
+  .md\:grid {
+    display: grid;
+  }
+
   .md\:w-2\/3 {
     width: 66.666667%;
   }
@@ -3582,6 +3586,10 @@ a:hover, i:hover{
     width: 50%;
   }
 
+  .md\:w-5\/6 {
+    width: 83.333333%;
+  }
+
   .md\:max-w-xl {
     max-width: 36rem;
   }
@@ -3592,6 +3600,10 @@ a:hover, i:hover{
 
   .md\:grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
