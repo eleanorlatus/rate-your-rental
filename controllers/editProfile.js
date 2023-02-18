@@ -14,7 +14,7 @@ module.exports = {
         try {
           // update profile photo
           if(req.file !== undefined){
-            result = await cloudinary.uploader.upload(req.file.path);
+            const result = await cloudinary.uploader.upload(req.file.path);
             await User.findOneAndUpdate(
               { _id: req.user.id },
               {
