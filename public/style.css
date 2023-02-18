@@ -3045,21 +3045,6 @@ html {
   font-size: 0.875rem;
 }
 
-.file-input-md {
-  height: 3rem;
-  padding-right: 1rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  line-height: 2;
-}
-
-.file-input-md::file-selector-button {
-  margin-right: 1rem;
-  height: 2.875rem;
-  min-height: 2.875rem;
-  font-size: 0.875rem;
-}
-
 .menu-horizontal {
   display: inline-flex;
   width: -moz-max-content;
@@ -3205,6 +3190,10 @@ html {
   border-bottom-left-radius: unset;
 }
 
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -3293,12 +3282,16 @@ html {
   display: none;
 }
 
-.w-96 {
-  width: 24rem;
+.w-24 {
+  width: 6rem;
 }
 
-.w-44 {
-  width: 11rem;
+.w-5\/6 {
+  width: 83.333333%;
+}
+
+.w-96 {
+  width: 24rem;
 }
 
 .w-full {
@@ -3313,28 +3306,12 @@ html {
   width: 13rem;
 }
 
-.w-5\/6 {
-  width: 83.333333%;
-}
-
-.w-3\/6 {
-  width: 50%;
-}
-
-.w-36 {
-  width: 9rem;
-}
-
-.w-24 {
-  width: 6rem;
+.max-w-xs {
+  max-width: 20rem;
 }
 
 .max-w-lg {
   max-width: 32rem;
-}
-
-.max-w-xs {
-  max-width: 20rem;
 }
 
 .flex-1 {
@@ -3357,8 +3334,16 @@ html {
   flex-wrap: wrap;
 }
 
+.content-center {
+  align-content: center;
+}
+
 .justify-end {
   justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .justify-evenly {
@@ -3375,6 +3360,10 @@ html {
 
 .gap-6 {
   gap: 1.5rem;
+}
+
+.justify-self-center {
+  justify-self: center;
 }
 
 .rounded-full {
@@ -3453,8 +3442,11 @@ html {
   padding-right: 0.25rem;
 }
 
-.py-2 {
-  padding-top: 0.5rem;
+.pb-5 {
+  padding-bottom: 1.25rem;
+}
+
+.pb-2 {
   padding-bottom: 0.5rem;
 }
 
@@ -3462,16 +3454,8 @@ html {
   padding-top: 0.75rem;
 }
 
-.pb-5 {
-  padding-bottom: 1.25rem;
-}
-
 .pb-4 {
   padding-bottom: 1rem;
-}
-
-.pb-2 {
-  padding-bottom: 0.5rem;
 }
 
 .pt-2 {
@@ -3500,11 +3484,6 @@ html {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
 }
 
 .font-bold {

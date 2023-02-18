@@ -11,20 +11,4 @@ module.exports = {
           console.log(err);
         }
       },
-      updateProfilePhoto: async (req, res) => {
-        try {
-            const result = await cloudinary.uploader.upload(req.file.path);
-            await User.findOneAndUpdate(
-              { _id: req.user.id },
-              {
-                profilePhoto: result.secure_url,
-                cloudinaryId: result.public_id,
-              }
-            );
-            console.log("Successfully changed profile photo")
-            res.redirect("/profile");
-        } catch (err) {
-          console.log(err);
-        }
-      },
   };

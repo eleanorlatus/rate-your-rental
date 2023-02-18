@@ -6,6 +6,4 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 router.get("/", ensureAuth, profileController.getProfile);
 
-router.post("/updateProfilePhoto", upload.single("file"), profileController.updateProfilePhoto);
-
 module.exports = router;

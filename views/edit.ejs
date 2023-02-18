@@ -2,19 +2,28 @@
   <main class="container pb-5">
         <div class="row justify-content-center">
             <section class="col-6 mt-5">
-                <form action="" method="">
-                    <div class="mb-3">
+                <form class="w-full max-w-lg mx-auto grid grid-cols-2 gap-4" action="/edit/editProfile" enctype="multipart/form-data" method="POST">
+                  <!-- col-1 -->
+                  <div class="col-span-2 justify-self-center">
+                  <div class="mb-3">
+                    <img src="<%= user.profilePhoto %>" alt="" class="pb-2 w-24">
+                    <label for="imgUpload" class="form-label">Change your profile photo</label><br>
+                    <input type="file" class="file-input file-input-bordered file-input-xs w-5/6 max-w-xs" id="imageUpload" name="file"><br>
+                  </div>
+                  </div>
+                <!-- col 2 -->
+                <div>
+                  <div class="mb-3">
                         <label for="userName" class="form-label">User Name</label>
-                        <input type="text" class="form-control" id="userName" name="userName" placeholder="<%= user.userName%>">
+                        <input type="text" class="form-control" id="userName" name="userName"placeholder="<%= user.userName%>">
                       </div>
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">Email address</label>
                       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="<%= user.email%>">
                     </div>
-                    <div class="mb-3">
-                      <label for="imgUpload" class="form-label">Change your profile photo</label><br>
-                      <input type="file" class="file-input file-input-bordered file-input-sm w-5/6 max-w-xs" id="imageUpload" name="file">
-                    </div>
+                  </div>
+                  <!-- col 3 -->
+                  <div>
                     <div class="mb-3">
                       <label for="password" class="form-label">Password</label>
                       <input type="password" class="form-control" id="password" name="password">
@@ -23,7 +32,11 @@
                         <label for="confirmPassword" class="form-label">Confirm Password</label>
                         <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
                       </div>
+                    </div>
+                    <!-- col 4 -->
+                    <div>
                     <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
                   </form>
             </section>
         </div>
