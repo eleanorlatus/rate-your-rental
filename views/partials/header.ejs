@@ -24,7 +24,7 @@
   
   <body class="bg-base-200">
         <!-- navbar -->
-    <div class="navbar bg-base-300 py-4 px-4">
+    <div class="bg-base-300 py-4 px-4 hidden sm:navbar">
       <div class="flex-1">
         <a class="btn btn-primary normal-case text-xl" href="/">Rate your rental</a>
       </div>
@@ -94,5 +94,29 @@
           </ul>
       </div>
     </div>
-      
     </div>
+
+         <!-- mobile navbar -->
+<div class="navbar-mobile bg-base-300 px-4 sm:hidden">
+  <!-- navigation -->
+  <div class="dropdown">
+    <label tabindex="0">
+      <div class="w-10">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </label>
+    <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+      <li class="mx-1"><a href="/profile">Profile</a></li>
+      <li class="mx-1"><a href="/feed">Feed</a></li>
+      <li class="mx-1"><a href="/reviews">Create review</a></li>
+      <!-- hide if logged in -->
+      <% if(user == undefined){ %>          
+      <li class="mx-1"><a href="/signup">Sign up</a></li>
+      <li class="mx-1"><a href="/login">Log in</a></li>
+      <% } else{ %> 
+      <!-- hide if not logged in -->
+      <li class="mx-1"><a href="/logout">Log out</a></li>
+      <% } %>
+    </ul>
+  </div>
+</div>

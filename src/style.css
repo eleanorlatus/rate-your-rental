@@ -27,3 +27,11 @@ a{
 a:hover, i:hover{
   color: rgb(187, 137, 43)
 }
+
+.navbar-mobile {
+  display: flex;
+  align-items: center;
+  padding: var(--navbar-padding, 0.5rem);
+  min-height: 3rem;
+  width: 100%;
+}
