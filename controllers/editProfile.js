@@ -12,6 +12,7 @@ module.exports = {
       },
       editProfile: async (req, res) => {
         try {
+          console.log(req.body)
           // update profile photo
           if(req.file !== undefined){
             const result = await cloudinary.uploader.upload(req.file.path);

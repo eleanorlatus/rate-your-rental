@@ -6,12 +6,12 @@
                 <div class="card-body">
                   <% if (locals.messages.errors) { %>
                     <% messages.errors.forEach( el => { %>
-                        <div class="alert-danger"><%= el.msg %></div>
+                        <div class="alert alert-danger"><%= el.msg %></div>
                     <% }) %>    
                 <% } %>
                 <% if (locals.messages.info) { %>
                     <% messages.info.forEach( el => { %>
-                        <div class="alert-info"><%= el.msg %></div>
+                        <div class="alert alert-info"><%= el.msg %></div>
                     <% }) %>    
                 <% } %>
                   <form action="/signup" method="POST">
@@ -32,7 +32,7 @@
                         <label for="confirmPassword" class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Confirm Password</label>
                         <input type="password" class="input input-bordered input-primary w-full" id="confirmPassword" name="confirmPassword">
                       </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary w-full">Submit</button>
                   </form>
                 </div>
               </div>

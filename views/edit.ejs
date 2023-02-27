@@ -1,45 +1,53 @@
 <%- include('partials/header') -%>
-  <main class="container pb-5">
-        <div class="row justify-content-center">
-            <section class="col-10 md:col-6 mt-5">
-                <form class="w-full max-w-lg mx-auto gap-4 justify-content-center" action="/edit/editProfile" enctype="multipart/form-data" method="POST">
+<div class="hero min-h-screen" style="background-image: url(/images/street.jpg);">
+    <div class="hero-overlay bg-opacity-20"></div>
+        <div class="hero-content flex-col lg:flex-row-reverse">
+          <div class="card flex-shrink-0 w-full shadow-2xl bg-base-200 w-max">
+            <div class="card-body">
+              <form class="w-full max-w-lg" action="/edit/editProfile" enctype="multipart/form-data" method="POST">
+                <div class="flex flex-wrap -mx-3 mb-6 justify-center">
                 <h1 class="text-2xl font-bold pb-2">Edit your profile</h1>
                   <!-- change profile photo -->
-                  <div class="col-span-2">
-                  <div class="mb-3">
-                    <img src="<%= user.profilePhoto %>" alt="" class="pb-2 w-24">
-                    <label for="imgUpload" class="form-label">Change your profile photo</label><br>
-                    <input type="file" class="file-input file-input-bordered file-input-xs md:w-5/6 max-w-xs" id="imageUpload" name="file"><br>
-                  </div>
+                  <div class="w-full mb-3 grid grid-cols-3">
+                    <div class="">
+                      <img src="<%= user.profilePhoto %>" alt="" class="pb-2 w-36">
+                    </div>
+                    <div class="col-start-2 col-span-2 self-center">
+                      <label for="imgUpload" class="form-label">Change your profile photo</label><br>
+                      <input type="file" class="file-input file-input-bordered" id="imageUpload" name="file"><br>
+                    </div>
+                    
                   </div>
                 <!-- username and email -->
-                <div>
-                  <div class="mb-3">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="userName" class="form-label">User Name</label>
+                  <div class="w-full mb-3">
+                        <label for="userName" class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">User Name</label>
                         <input type="text" class="input input-bordered input-primary w-full" id="userName" name="userName"placeholder="<%= user.userName%>">
                       </div>
-                    <div class="mb-3">
-                      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="exampleInputEmail1" class="form-label">Email address</label>
+                    <div class="w-full mb-3">
+                      <label for="exampleInputEmail1" class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Email address</label>
                       <input type="email" class="input input-bordered input-primary w-full" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="<%= user.email%>">
                     </div>
-                  </div>
                   <!-- col 3 -->
-                  <!-- <div>
-                    <div class="mb-3">
-                      <label for="password" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="password" name="password">
+                    <div class="w-full mb-3">
+                      <label for="password" class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Password</label>
+                      <input type="password" class="input input-bordered input-primary w-full" id="password" name="password">
                     </div>
-                    <div class="mb-3">
-                        <label for="confirmPassword" class="form-label">Confirm Password</label>
-                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
-                      </div>
-                    </div> -->
+                    <div class="w-full mb-3">
+                        <label for="confirmPassword" class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Confirm Password</label>
+                        <input type="password" class="input input-bordered input-primary w-full" id="confirmPassword" name="confirmPassword">
+                    </div>
                     <!-- col 4 -->
-                    <div class="mb-3 col-span-2 justify-self-center">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <div class="w-full">
+                    <button type="submit" class="btn btn-primary w-full">Submit</button>
                   </div>
+                </div>
                   </form>
-            </section>
-        </div>
-  </main>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 <%- include('partials/footer') -%>
+
+
