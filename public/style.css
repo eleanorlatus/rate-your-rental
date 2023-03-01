@@ -3520,6 +3520,11 @@ html {
   padding-right: 0.25rem;
 }
 
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
 .pb-5 {
   padding-bottom: 1.25rem;
 }
@@ -3538,6 +3543,10 @@ html {
 
 .pt-2 {
   padding-top: 0.5rem;
+}
+
+.pt-6 {
+  padding-top: 1.5rem;
 }
 
 .text-center {
@@ -3597,6 +3606,10 @@ html {
 
 .underline {
   text-decoration-line: underline;
+}
+
+.decoration-primary-focus {
+  text-decoration-color: hsl(var(--pf, var(--p)));
 }
 
 .underline-offset-4 {

@@ -6,7 +6,7 @@
         <h1 class="text-2xl font-bold"> <%= property.streetName%>, <%= property.postcode%></h1>
     </div>
 <!-- images in grid-->
-<div class="flex flex-col lg:flex-row justify-evenly py-4 my-4 gap-6">
+<div class="flex flex-col lg:flex-row justify-evenly py-6 gap-6 border-b-2 border-primary-focus">
   <% for(var i=0; i<review.length; i++) {%>
     <!-- image -->
     <% if(review[i].image) {%>
@@ -19,7 +19,7 @@
 </div>
 <!-- review -->
 <% for(var i=0; i<review.length; i++) {%>
-<div class="border-2 border-primary-focus px-8 py-4 my-4"> <!-- outer review div-->
+<div class="border-b-2 border-primary-focus px-8 py-6"> <!-- outer review div-->
     <div class="pb-2"> <!-- posted by and tenancy dates-->
       <p>Review posted by <%= review[i].user.userName%></p>
         <% if(review[i].tenancyFrom && review[i].tenancyTo != "") {%>
@@ -34,11 +34,14 @@
     </div>
 </div>
 <% } %>
+<div class="pt-6 px-8">
 <% if(user == undefined){ %>
 <h3 class="text-xl font-bold pb-2">Want to leave a review for this property? <a href="/login" class="underline underline-offset-4 text-primary-focus">Log in</a> or <a href="/signup" class="underline underline-offset-4 text-primary-focus">create an account</a> today.</h3>
 <% } else{ %> 
   <h3 class="text-xl font-bold pb-2">Want to leave a review for this property? <a href="/reviews" class="underline underline-offset-4 text-primary-focus">Create a review</a> today.</h3>
 <% } %>
+</div>
+  
 </div>
 
 
