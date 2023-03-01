@@ -53,7 +53,7 @@ module.exports = {
             cloudinaryId: result.public_id,
           });
         console.log("Review has been added!");
-        res.redirect("/reviews");
+        res.redirect(`/property/${property[0].id}`);
       } catch (err) {
         console.log(err);
       }
