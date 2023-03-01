@@ -45,8 +45,8 @@ module.exports = {
             propertyId: property[0]._id,
             streetName: streetName,
             postcode: postcode,
-            tenancyFrom: req.body.tenancyFrom,
-            tenancyTo: req.body.tenancyTo,
+            tenancyFrom: req.body.tenancyFrom.split("-").reverse().join("/"),
+            tenancyTo: req.body.tenancyTo.split("-").reverse().join("/"),
             title: req.body.title,
             body: req.body.body,
             image: result.secure_url,
@@ -56,6 +56,17 @@ module.exports = {
         res.redirect("/reviews");
       } catch (err) {
         console.log(err);
+      }
+    },
+    deleteReview: async (req, res) => {
+      try {
+        let review = await Review.findById({ _id: req.params.id });
+        await cloudinary.uploader.destroy(review.cloudinaryId);
+        await Review.remove({ _id: req.params.id });
+        console.log(review);
+        res.redirect("/profile");
+      } catch (err) {
+        res.redirect("/");
       }
     },
   };

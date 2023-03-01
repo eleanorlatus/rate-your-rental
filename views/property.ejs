@@ -20,13 +20,24 @@
 <!-- review -->
 <% for(var i=0; i<review.length; i++) {%>
 <div class="border-b-2 border-primary-focus px-8 py-6"> <!-- outer review div-->
-    <div class="pb-2"> <!-- posted by and tenancy dates-->
+  <div class="grid grid-cols-12">
+    <div class="pb-2 col-span-5"> <!-- posted by and tenancy dates-->
       <p>Review posted by <%= review[i].user.userName%></p>
         <% if(review[i].tenancyFrom && review[i].tenancyTo != "") {%>
           <p>Tenancy from <%= review[i].tenancyFrom%> to <%= review[i].tenancyTo%></p>
         <% } %>
-        <!--<img src="<%= review[i].image%>">-->
+        </div>
+        <div class="pb-2 col-start-12 justify-self-end"> 
+        <%if(review[i].user._id == user.id){ %>
+          <form
+            action="/property/deleteReview/<%= review[i]._id %>?_method=DELETE"
+            method="POST"
+            class="col-3"
+          ><button class="btn btn-primary fa fa-trash text-2xl" type="submit"></button>
+        </form>
+          <% } %>
     </div>
+  </div>
     <!-- review title and body-->
     <div>
         <h1 class="text-2xl font-bold pb-2"><%= review[i].title%></h1>

@@ -9,4 +9,6 @@ router.get("/", ensureAuth, reviewController.getReviewPage);
 
 router.post("/createReview",  upload.single("file"), reviewController.createReview);
 
+router.delete("/deleteReview/:id", reviewController.deleteReview);
+
 module.exports = router;

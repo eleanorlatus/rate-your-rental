@@ -3216,12 +3216,20 @@ html {
   grid-column: span 3 / span 3;
 }
 
+.col-span-5 {
+  grid-column: span 5 / span 5;
+}
+
 .col-start-1 {
   grid-column-start: 1;
 }
 
 .col-start-2 {
   grid-column-start: 2;
+}
+
+.col-start-12 {
+  grid-column-start: 12;
 }
 
 .row-start-1 {
@@ -3397,6 +3405,10 @@ html {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.grid-cols-12 {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -3431,6 +3443,10 @@ html {
 
 .self-center {
   align-self: center;
+}
+
+.justify-self-end {
+  justify-self: end;
 }
 
 .justify-self-center {
