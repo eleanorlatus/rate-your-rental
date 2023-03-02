@@ -58,15 +58,4 @@ module.exports = {
         console.log(err);
       }
     },
-    deleteReview: async (req, res) => {
-      try {
-        let review = await Review.findById({ _id: req.params.id });
-        await cloudinary.uploader.destroy(review.cloudinaryId);
-        await Review.remove({ _id: req.params.id });
-        console.log(review);
-        res.redirect("/profile");
-      } catch (err) {
-        res.redirect("/");
-      }
-    },
   };
