@@ -30,7 +30,7 @@
         <div class="pb-2 col-start-12 justify-self-end"> 
         <%if(review[i].user._id == user.id){ %>
           <form
-            action="/property/deleteReview/<%= review[i]._id %>?_method=DELETE"
+            action="/reviews/deleteReview/<%= review[i]._id %>?_method=DELETE"
             method="POST"
             class="col-3"
           ><button class="btn btn-primary fa fa-trash text-2xl" type="submit"></button>

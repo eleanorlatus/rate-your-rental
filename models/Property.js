@@ -9,6 +9,10 @@ const PropertySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  images:{
+    type: Array,
+    required: false,
+  },
   createdAt: {
     type: Date,
     default: Date.now,

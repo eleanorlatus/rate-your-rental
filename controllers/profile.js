@@ -13,9 +13,9 @@ module.exports = {
       deleteReview: async (req, res) => {
         try {
           let review = await Review.findById({ _id: req.params.id });
-          // if(review.cloudinaryId != ""){
-          //   await cloudinary.uploader.destroy(review.cloudinaryId);
-          // }
+          if(review.cloudinaryId != ""){
+            await cloudinary.uploader.destroy(review.cloudinaryId);
+          }
           await Review.remove({ _id: req.params.id });
           res.redirect("/profile");
         } catch (err) {
