@@ -37,13 +37,6 @@ module.exports = {
         // If an image has been uploaded by the user, upload the image to cloudinary
         if(req.file !== undefined){
          result = await cloudinary.uploader.upload(req.file.path);
-         //add review to property
-        await Property.findOneAndUpdate(
-          { _id: property[0]._id },
-          {
-            $push:   { images: result.secure_url} 
-          },
-        );
         }else{
           result=
           {
@@ -64,6 +57,17 @@ module.exports = {
             image: result.secure_url,
             cloudinaryId: result.public_id,
           });
+         //add review to property
+        await Property.findOneAndUpdate(
+          { _id: property[0]._id },
+          {
+            $push:   { images: {
+            reviewId: newReview.id,
+            url: result.secure_url,
+            cloudinaryId: result.public_id,
+            }} 
+          },
+        );
         console.log("Review has been added!");
         res.redirect(`/property/${property[0].id}`);
       } catch (err) {
@@ -78,6 +82,8 @@ module.exports = {
           await cloudinary.uploader.destroy(review.cloudinaryId);
         }
         await Review.remove({ _id: req.params.id });
+        await Property.updateOne({_id: review.propertyId}, { $pull: { images: { reviewId: req.params.id } } });
+
         res.redirect(`/property/${property.id}`);
       } catch (err) {
         res.redirect("/");

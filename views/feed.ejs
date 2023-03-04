@@ -4,17 +4,37 @@
   <div class="grid xl:grid-cols-3 gap-4 lg:grid-cols-2 md:grid-cols-1 ">
       <% for(var i=0; i<property.length; i++) {%>
     <div class="card w-96 bg-base-100 shadow-xl mx-auto">
-      <figure>
+      <figure class=" h-4/6">
         
-
-
-      </figure>
-      <div class="card-body">
-        <h2 class="card-title">Title</h2>
-        <div class="card-actions justify-end">
+        <div class="carousel w-full">
+          <% if(property[i].images != undefined) {%>
+          <% for(var j=0; j<property[i].images.length; j++) {%>
+          <div id="slide1" class="carousel-item relative w-full">
+            <img src="<%= property[i].images[j]%>" class="w-full" />
+            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <a href="#slide4" class="btn btn-accent btn-circle">❮</a> 
+              <a href="#slide2" class="btn btn-accent btn-circle">❯</a>
+            </div>
+            
+          </div> 
+          <% } %>
+        <% } else{%>
+          <div class="carousel-item relative w-full">
+            <!-- need image to fill container -->
+            <img src="/images/stock/bedroom.jpg" alt="Shoes" />
+          </div> 
+        <% } %>
+        </div>
+        </figure>
+      
+        <div class="card-body">
+          <h2 class="card-title"><%= property[i].streetName%>, <%= property[i].postcode.toUpperCase()%></h2>
+          <!-- <p><%= property[i].title%></p> -->
+          <div class="card-actions justify-end">
+            <a href="/property/<%= property[i]._id%>"><button class="btn btn-primary">View Property</button></a>
+          </div>
         </div>
       </div>
-    </div>
     <% } %>
   </div>
 </div>
