@@ -4,19 +4,33 @@
   <div class="grid xl:grid-cols-3 gap-4 lg:grid-cols-2 md:grid-cols-1 ">
       <% for(var i=0; i<property.length; i++) {%>
     <div class="card w-96 bg-base-100 shadow-xl mx-auto">
-      <figure class=" h-4/6">
+      <figure class="h-4/6">
         
         <div class="carousel w-full">
           <% if(property[i].images != undefined) {%>
           <% for(var j=0; j<property[i].images.length; j++) {%>
-          <div id="slide1" class="carousel-item relative w-full">
-            <img src="<%= property[i].images[j]%>" class="w-full" />
-            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href="#slide4" class="btn btn-accent btn-circle">❮</a> 
-              <a href="#slide2" class="btn btn-accent btn-circle">❯</a>
-            </div>
+          <div id="<%= property[i].images[j].cloudinaryId%>" class="carousel-item relative w-full">
             
-          </div> 
+            <img src="<%= property[i].images[j].url%>" class="w-full rounded-t-2xl" />
+            <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+              <!-- only show buttons if more than 1 img -->
+              <% if(property[i].images.length>1) {%>
+              <!-- if first image -->
+              <% if(j==0) {%>
+                <a href="#<%= property[i].images[property[i].images.length-1].cloudinaryId %>" class="btn btn-accent btn-circle">❮</a> 
+                <a href="#<%= property[i].images[1].cloudinaryId %>" class="btn btn-accent btn-circle">❯</a>
+                <!-- if last image -->
+              <% }else if(j+1 ==property[i].images.length) {%>
+                <a href="#<%= property[i].images[j-1].cloudinaryId %>" class="btn btn-accent btn-circle">❮</a> 
+                <a href="#<%= property[i].images[0].cloudinaryId %>" class="btn btn-accent btn-circle">❯</a>
+                <!-- if middle image -->
+              <% }else { %>
+              <a href="#<%= property[i].images[j-1].cloudinaryId %>" class="btn btn-accent btn-circle">❮</a> 
+              <a href="#<%= property[i].images[j+1].cloudinaryId %>" class="btn btn-accent btn-circle">❯</a>
+              <% } %>
+              <% } %>
+            </div>
+          </div>          
           <% } %>
         <% } else{%>
           <div class="carousel-item relative w-full">
@@ -35,6 +49,8 @@
           </div>
         </div>
       </div>
+      
+      
     <% } %>
   </div>
 </div>

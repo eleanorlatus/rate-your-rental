@@ -7,7 +7,7 @@ module.exports = {
     try {
       const property = await Property.find().sort({ createdAt: "desc" }).lean();
       res.render("feed.ejs", {property: property, user: req.user});
-      console.log(property)
+      console.log(property[0].images)
     } catch (err) {
       console.log(err);
     }
@@ -19,7 +19,7 @@ module.exports = {
           console.log(err);
         }
       },
-    createReview: async (req, res) => {
+  createReview: async (req, res) => {
       try {
         const streetName = req.body.streetName.split(" ").map((x)=>x[0].toUpperCase() + x.slice(1)).join(" ")
         const postcode = req.body.postcode.toUpperCase()
@@ -83,7 +83,6 @@ module.exports = {
         }
         await Review.remove({ _id: req.params.id });
         await Property.updateOne({_id: review.propertyId}, { $pull: { images: { reviewId: req.params.id } } });
-
         res.redirect(`/property/${property.id}`);
       } catch (err) {
         res.redirect("/");
