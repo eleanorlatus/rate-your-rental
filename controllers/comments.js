@@ -10,7 +10,7 @@ module.exports = {
       });
       console.log("Comment has been added!");
       console.log(req.body);
-      res.redirect("/post/"+req.params.id);
+      res.redirect(`/post/${req.params.id}`);
     } catch (err) {
       console.log(err);
     }

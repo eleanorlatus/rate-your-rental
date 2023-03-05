@@ -4,14 +4,14 @@
   <div class="grid xl:grid-cols-3 gap-4 lg:grid-cols-2 md:grid-cols-1 ">
       <% for(var i=0; i<property.length; i++) {%>
     <div class="card w-96 bg-base-100 shadow-xl mx-auto">
-      <figure class="h-4/6">
+      <figure class="h-3/5 bg-base-200">
         
         <div class="carousel w-full">
-          <% if(property[i].images != undefined) {%>
+          <% if(property[i].images.length > 0 ) {%>
           <% for(var j=0; j<property[i].images.length; j++) {%>
           <div id="<%= property[i].images[j].cloudinaryId%>" class="carousel-item relative w-full">
-            
             <img src="<%= property[i].images[j].url%>" class="w-full rounded-t-2xl" />
+            <!-- buttons -->
             <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
               <!-- only show buttons if more than 1 img -->
               <% if(property[i].images.length>1) {%>
@@ -44,7 +44,7 @@
         <div class="card-body">
           <h2 class="card-title"><%= property[i].streetName%>, <%= property[i].postcode.toUpperCase()%></h2>
           <!-- <p><%= property[i].title%></p> -->
-          <div class="card-actions justify-end">
+          <div class="card-actions h-full justify-end content-end">
             <a href="/property/<%= property[i]._id%>"><button class="btn btn-primary">View Property</button></a>
           </div>
         </div>

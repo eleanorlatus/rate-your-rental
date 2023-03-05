@@ -13,6 +13,10 @@ const PropertySchema = new mongoose.Schema({
     type: Array,
     required: false,
   },
+  reviews:{
+    type: Array,
+    required: true,
+  },
   createdAt: {
     type: Date,
     default: Date.now,

@@ -7,7 +7,7 @@ module.exports = {
         try {
         const property = await Property.findById(req.params.id);
         const review = await Review.find({ propertyId: req.params.id}).populate("user").sort({ tenancyFrom: "desc" }).lean();
-        res.render("property.ejs", { property: property, review: review, user: req.user});
+        res.render("property.ejs", { property: property, review: review, loggedInUser: req.user});
         } catch (err) {
           console.log(err);
         }

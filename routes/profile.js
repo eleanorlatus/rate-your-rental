@@ -4,7 +4,7 @@ const upload = require("../middleware/multer");
 const profileController = require("../controllers/profile");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
-router.get("/", ensureAuth, profileController.getProfile);
+router.get("/:id", ensureAuth, profileController.getProfile);
 
 router.delete("/deleteReview/:id", profileController.deleteReview);
 

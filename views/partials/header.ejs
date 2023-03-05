@@ -27,11 +27,11 @@
           <div class="flex-none">
         <ul class="menu menu-horizontal px-1">
           <li class="mx-1"><a href="/feed">Feed</a></li>
-          <% if(user != undefined){ %>
+          <% if(loggedInUser != undefined){ %>
           <li class="mx-1"><a href="/reviews">Create review</a></li>
           <% } %>
           <!-- hide if logged in -->
-          <% if(user == undefined){ %>          
+          <% if(loggedInUser == undefined){ %>          
           <li class="mx-1"><a href="/signup">Sign up</a></li>
           <li class="mx-1"><a href="/login">Log in</a></li>
           <% } else{ %> 
@@ -54,10 +54,10 @@
       <div class="hidden lg:block">
         <label tabindex="0" class="btn btn-secondary btn-circle avatar mx-2">
           <div class="w-10 rounded-full">
-            <% if(user == undefined){ %>    
-            <a href="/profile"><img src="/images/stock/cat.jpg" /></a>
+            <% if(loggedInUser == undefined){ %>    
+            <a href="/login"><img src="/images/stock/cat.jpg" /></a>
             <% } else{ %> 
-              <a href="/profile"><img src="<%= user.profilePhoto %>" /></a>
+              <a href="/profile/<%= loggedInUser._id%>"><img src="<%= loggedInUser.profilePhoto %>" /></a>
             <% } %>
           </div>
         </label>
@@ -67,10 +67,10 @@
       <div class="dropdown dropdown-end">
         <label tabindex="0" class="btn btn-secondary btn-circle avatar mx-2">
           <div class="w-10 rounded-full">
-            <% if(user == undefined){ %>    
+            <% if(loggedInUser == undefined){ %>    
               <img src="/images/stock/cat.jpg" />
               <% } else{ %> 
-                <img src="<%= user.profilePhoto %>" />
+                <img src="<%= loggedInUser.profilePhoto %>" />
               <% } %>
           </div>
         </label>
@@ -79,7 +79,7 @@
             <li class="mx-1"><a href="/feed">Feed</a></li>
             <li class="mx-1"><a href="/reviews">Create review</a></li>
             <!-- hide if logged in -->
-            <% if(user == undefined){ %>          
+            <% if(loggedInUser == undefined){ %>          
             <li class="mx-1"><a href="/signup">Sign up</a></li>
             <li class="mx-1"><a href="/login">Log in</a></li>
             <% } else{ %> 
@@ -107,7 +107,7 @@
       <li class="mx-1"><a href="/feed">Feed</a></li>
       <li class="mx-1"><a href="/reviews">Create review</a></li>
       <!-- hide if logged in -->
-      <% if(user == undefined){ %>          
+      <% if(loggedInUser == undefined){ %>          
       <li class="mx-1"><a href="/signup">Sign up</a></li>
       <li class="mx-1"><a href="/login">Log in</a></li>
       <% } else{ %> 

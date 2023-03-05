@@ -10,7 +10,7 @@
                   <!-- change profile photo -->
                   <div class="w-full mb-3 grid grid-cols-3">
                     <div class="">
-                      <img src="<%= user.profilePhoto %>" alt="" class="pb-2 w-36">
+                      <img src="<%= loggedInUser.profilePhoto %>" alt="" class="pb-2 w-36">
                     </div>
                     <div class="col-start-2 col-span-2 self-center">
                       <label for="imgUpload" class="form-label">Change your profile photo</label><br>
@@ -21,11 +21,11 @@
                 <!-- username and email -->
                   <div class="w-full mb-3">
                         <label for="userName" class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">User Name</label>
-                        <input type="text" class="input input-bordered input-primary w-full" id="userName" name="userName"placeholder="<%= user.userName%>">
+                        <input type="text" class="input input-bordered input-primary w-full" id="userName" name="userName"placeholder="<%= loggedInUser.userName%>">
                       </div>
                     <div class="w-full mb-3">
                       <label for="exampleInputEmail1" class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Email address</label>
-                      <input type="email" class="input input-bordered input-primary w-full" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="<%= user.email%>">
+                      <input type="email" class="input input-bordered input-primary w-full" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="<%= loggedInUser.email%>">
                     </div>
                   <!-- col 3 -->
                     <div class="w-full mb-3">

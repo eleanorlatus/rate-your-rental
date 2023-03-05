@@ -2,13 +2,17 @@
 <div class="lg:grid lg:grid-cols-3 m-4">
 <!-- heading -->
 <div class="col-start-1 col-span-3">
+<%if(user._id == loggedInUser.id){ %>
 <span class="text-3xl font-bold underline underline-offset-4 pb-2">Your reviews</span>
+<% } else{%>
+  <span class="text-3xl font-bold underline underline-offset-4 pb-2"><%= user.userName%>'s reviews</span>
+<% } %>
 </div>
 <% for(var i=0; i<review.length; i++) {%>
 <!-- review image -->
 <div class="lg:col-span-1 sm:grid sm:grid-cols-2 lg:block border-b-2 border-primary-focus">
       <div class=" p-2 my-4">
-        <a href="/property/<%= review[i].propertyId%>"><img src="<%= review[i].image%>"></a>
+        <a href="/property/<%= review[i].propertyId%>"><img src="<%= review[i].image%>" class="w-full"></a>
       </div>
 </div>
 <div class="lg:col-span-2 border-b-2 border-primary-focus">
@@ -24,7 +28,7 @@
                   <% } %>
                   </div>
                   <div class="col-start-12 justify-self-end"> 
-                  <%if(review[i].user._id == user.id){ %>
+                  <%if(review[i].user._id == loggedInUser.id){ %>
                     <form
                       action="/profile/deleteReview/<%= review[i]._id %>?_method=DELETE"
                       method="POST"

@@ -4,8 +4,7 @@ const User = require("../models/User.js");
 module.exports = {
     getPage: async (req, res) => {
         try {
-        res.render("edit.ejs", {user: req.user});
-        console.log(req.user)
+        res.render("edit.ejs", {loggedInUser: req.user});
         } catch (err) {
           console.log(err);
         }
@@ -44,7 +43,7 @@ module.exports = {
             console.log("Successfully changed email")
           }
           console.log(req.body)            
-          res.redirect("/profile");
+          res.redirect("/profile/${req.uesr.id}");
         } catch (err) {
           console.log(err);
         }
