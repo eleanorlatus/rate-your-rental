@@ -36,26 +36,26 @@
           <% if(loggedInUser != undefined){ %>
           <li class="mx-1"><a href="/reviews">Create review</a></li>
           <% } %>
-          <!-- hide if logged in -->
+          <!-- show if not logged in -->
           <% if(loggedInUser == undefined){ %>          
           <li class="mx-1"><a href="/signup">Sign up</a></li>
           <li class="mx-1"><a href="/login">Log in</a></li>
           <% } else{ %> 
-          <!-- hide if not logged in -->
+          <!-- show if logged in -->
           <li class="mx-1"><a href="/logout">Log out</a></li>
           <% } %>
         </ul>
           </div>
         </div>
-      <!-- search bar -->
-      <!-- <div class="flex-none">
+      <!-- search bar (only on lg)-->
+      <div class="flex-none hidden lg:block">
         <div class="">
           <div class="form bg-base-300 mr-1">
             <input type="text" placeholder="Search" class="input input-bordered" />
           </div>
         </div>
-      </div> -->
-      <!-- avatar, show only on md and above-->
+      </div>
+      <!-- avatar-->
       <div class="">
         <label tabindex="0" class="btn btn-secondary btn-circle avatar mx-2">
           <div class="w-10 rounded-full">

@@ -7,7 +7,7 @@ module.exports = {
     try {
       const property = await Property.find().sort({ createdAt: "desc" }).lean();
       res.render("feed.ejs", {property: property, loggedInUser: req.user});
-      console.log(property[0].images.length)
+      console.log(property[0].images)
     } catch (err) {
       console.log(err);
     }
@@ -85,7 +85,6 @@ module.exports = {
     deleteReview: async (req, res) => {
       try {
         const review = await Review.findById({ _id: req.params.id });
-        const property = await Property.findById({ _id: review.propertyId });
         if(review.cloudinaryId != ""){
           await cloudinary.uploader.destroy(review.cloudinaryId);
         }
@@ -93,9 +92,9 @@ module.exports = {
         // update property document
         await Property.updateOne({_id: review.propertyId}, { $pull: { images: { reviewId: req.params.id }} });
         await Property.updateOne({_id: review.propertyId}, { $pull: { reviews: req.params.id } });
-
+        const property = await Property.findById({ _id: review.propertyId });
         // if a property no longer holds a review, delete said property
-        if(property.reviews.length == 1){
+        if(property.reviews.length == 0){
           await Property.deleteOne({ _id: review.propertyId });
           res.redirect(`/profile/${req.user.id}`);
         } else{

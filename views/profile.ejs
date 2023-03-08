@@ -1,42 +1,50 @@
 <%- include('partials/header') -%>
-<div class="lg:grid lg:grid-cols-3 m-4">
+<div class="m-4">
 <!-- heading -->
-<div class="col-start-1 col-span-3">
+<div>
 <%if(user._id == loggedInUser.id){ %>
 <span class="text-3xl font-bold underline underline-offset-4 pb-2">Your reviews</span>
 <% } else{%>
   <span class="text-3xl font-bold underline underline-offset-4 pb-2"><%= user.userName%>'s reviews</span>
 <% } %>
 </div>
+
 <% for(var i=0; i<review.length; i++) {%>
-<!-- review image -->
-<div class="lg:col-span-1 sm:grid sm:grid-cols-2 lg:block border-b-2 border-primary-focus">
-      <div class=" p-2 my-4">
+  <!-- review -->
+<div class="lg:grid lg:grid-cols-3">
+<div class="lg:col-span-1 lg:block lg:border-b-2 border-primary-focus max-w-xl mx-auto">
+      <div class="p-2 my-2 md:my-4">
         <a href="/property/<%= review[i].propertyId%>"><img src="<%= review[i].image%>" class="w-full"></a>
       </div>
 </div>
 <div class="lg:col-span-2 border-b-2 border-primary-focus">
         <!-- outer review div-->
-        <div class="px-8 py-4 my-4">
+        <div class="px-2 py-1 my-2 md:px-8 md:py-4 md:my-4">
             <!-- address and tenancy dates-->
             <div class="grid grid-cols-12">
-              <div class="pb-2 col-span-5">
+              <div class="pb-2
+              <%if(review[i].user._id == loggedInUser.id){ %>
+               col-span-10
+               <%} else{%>
+                col-span-12
+                <% }%>
+               lg:col-span-5">
                 <!-- tenancy dates-->
                 <h3 class="text-l font-bold pb-2">Review for <a href="/property/<%= review[i].propertyId%>"><%= review[i].streetName%>, <%= review[i].postcode%></a></h3>
                   <% if(review[i].tenancyFrom && review[i].tenancyTo != "") {%>
                     <p>Tenancy from <%= review[i].tenancyFrom%> to <%= review[i].tenancyTo%></p>
                   <% } %>
                   </div>
-                  <div class="col-start-12 justify-self-end"> 
                   <%if(review[i].user._id == loggedInUser.id){ %>
+                    <div class="col-start-12 justify-self-end"> 
                     <form
                       action="/profile/deleteReview/<%= review[i]._id %>?_method=DELETE"
                       method="POST"
                       class="col-3"
                     ><button class="btn btn-primary fa fa-trash text-2xl" type="submit"></button>
                   </form>
+                </div>
                     <% } %>
-              </div>
             </div>
             <!-- review title and body-->
             <div> 
@@ -44,6 +52,7 @@
               <p class="pt-2"><%= review[i].body%></p>
             </div>
         </div>
+</div>
 </div>
 <% } %>
 </div>

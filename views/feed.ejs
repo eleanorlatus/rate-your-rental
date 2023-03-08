@@ -1,16 +1,16 @@
 <%- include('partials/header') -%>
 <div class="container mx-auto px-4 py-5">
   <!-- row 1 -->
-  <div class="grid xl:grid-cols-3 gap-4 lg:grid-cols-2 md:grid-cols-1 ">
+  <div class="grid lg:grid-cols-3 gap-4 md:grid-cols-2 grid-cols-1 ">
       <% for(var i=0; i<property.length; i++) {%>
-    <div class="card w-96 bg-base-100 shadow-xl mx-auto">
-      <figure class="h-3/5 bg-base-200">
+    <div class="card max-w-sm bg-base-100 shadow-xl mx-auto">
+      <figure class="h-3/5 bg-base-100">
         
         <div class="carousel w-full">
           <% if(property[i].images.length > 0 ) {%>
           <% for(var j=0; j<property[i].images.length; j++) {%>
           <div id="<%= property[i].images[j].cloudinaryId%>" class="carousel-item relative w-full">
-            <img src="<%= property[i].images[j].url%>" class="w-full rounded-t-2xl" />
+            <img src="<%= property[i].images[j].url%>" class="rounded-t-2xl" />
             <!-- buttons -->
             <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
               <!-- only show buttons if more than 1 img -->
@@ -35,7 +35,7 @@
         <% } else{%>
           <div class="carousel-item relative w-full">
             <!-- need image to fill container -->
-            <img src="/images/stock/bedroom.jpg" alt="Shoes" />
+            <img src="/images/stock/bedroom.jpg" alt="Shoes"  class="rounded-t-2xl"/>
           </div> 
         <% } %>
         </div>
