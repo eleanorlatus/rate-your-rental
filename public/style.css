@@ -3832,6 +3832,19 @@ a:hover, i:hover{
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
+
+  .sm\:navbar {
+    display: flex;
+    align-items: center;
+    padding: var(--navbar-padding, 0.5rem);
+    min-height: 4rem;
+    width: 100%;
+  }
+
+  :where(.sm\:navbar > *) {
+    display: inline-flex;
+    align-items: center;
+  }
 }
 
 @media (min-width: 768px) {
@@ -3847,6 +3860,14 @@ a:hover, i:hover{
 
   .md\:mb-0 {
     margin-bottom: 0px;
+  }
+
+  .md\:block {
+    display: block;
+  }
+
+  .md\:hidden {
+    display: none;
   }
 
   .md\:w-2\/3 {
@@ -3871,6 +3892,19 @@ a:hover, i:hover{
 
   .md\:grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .md\:navbar {
+    display: flex;
+    align-items: center;
+    padding: var(--navbar-padding, 0.5rem);
+    min-height: 4rem;
+    width: 100%;
+  }
+
+  :where(.md\:navbar > *) {
+    display: inline-flex;
+    align-items: center;
   }
 
   .md\:text-3xl {
@@ -3935,6 +3969,19 @@ a:hover, i:hover{
   .lg\:px-20 {
     padding-left: 5rem;
     padding-right: 5rem;
+  }
+
+  .lg\:navbar {
+    display: flex;
+    align-items: center;
+    padding: var(--navbar-padding, 0.5rem);
+    min-height: 4rem;
+    width: 100%;
+  }
+
+  :where(.lg\:navbar > *) {
+    display: inline-flex;
+    align-items: center;
   }
 }
 
