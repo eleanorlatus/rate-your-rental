@@ -9,6 +9,7 @@ module.exports = {
           const user = await User.findById(req.params.id);
           const reviews = await Review.find({ user: user.id });
           console.log(req.user)
+          console.log(reviews)
           res.render("profile.ejs", { review: reviews, user: user, loggedInUser: req.user });
         } catch (err) {
           console.log(err);

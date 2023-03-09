@@ -19,9 +19,13 @@
 </div>
 <!-- review -->
 <% for(var i=0; i<review.length; i++) {%>
-<div class="border-b-2 border-primary-focus px-2 py-2 lg:px-8 lg:py-6"> <!-- outer review div-->
+<div class="border-b-2 border-primary-focus px-2 py-4 lg:px-8 lg:py-6"> <!-- outer review div-->
   <div class="grid grid-cols-12">
-    <div class="pb-2 col-span-10"> <!-- posted by and tenancy dates-->
+    <div class="pb-2 <%if(review[i].user._id == loggedInUser.id){ %>
+      col-span-10
+      <%} else{%>
+       col-span-12
+       <% }%>"> <!-- posted by and tenancy dates-->
       <p>Review posted by <a href="/profile/<%= review[i].user._id%>"><%= review[i].user.userName%></a></p>
         <% if(review[i].tenancyFrom && review[i].tenancyTo != "") {%>
           <p>Tenancy from <%= review[i].tenancyFrom%> to <%= review[i].tenancyTo%></p>
@@ -45,7 +49,7 @@
     </div>
 </div>
 <% } %>
-<div class=" px-2 py-2 lg:px-8 lg:py-6">
+<div class=" px-2 py-4 lg:px-8 lg:py-6">
 <% if(loggedInUser == undefined){ %>
 <h3 class="text-xl font-bold pb-2">Want to leave a review for this property? <a href="/login" class="underline underline-offset-4 text-primary-focus">Log in</a> or <a href="/signup" class="underline underline-offset-4 text-primary-focus">create an account</a> today.</h3>
 <% } else{ %> 

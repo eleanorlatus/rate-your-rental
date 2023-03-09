@@ -2,19 +2,19 @@
 <div class="hero min-h-screen" style="background-image: url(/images/street.jpg);">
     <div class="hero-overlay bg-opacity-20"></div>
         <div class="hero-content flex-col lg:flex-row-reverse">
-          <div class="card flex-shrink-0 w-full shadow-2xl bg-base-200 w-max">
+          <div class="card flex-shrink-0 w-full shadow-2xl bg-base-200">
             <div class="card-body">
               <form class="w-full max-w-lg" action="/edit/editProfile" enctype="multipart/form-data" method="POST">
                 <div class="flex flex-wrap -mx-3 mb-6 justify-center">
                 <h1 class="text-2xl font-bold pb-2">Edit your profile</h1>
                   <!-- change profile photo -->
-                  <div class="w-full mb-3 grid grid-cols-3">
+                  <div class="w-full mb-3 lg:grid grid-cols-3">
                     <div class="">
-                      <img src="<%= loggedInUser.profilePhoto %>" alt="" class="pb-2 w-36">
+                      <img src="<%= loggedInUser.profilePhoto %>" alt="" class="pb-2 w-36 mx-auto">
                     </div>
                     <div class="col-start-2 col-span-2 self-center">
                       <label for="imgUpload" class="form-label">Change your profile photo</label><br>
-                      <input type="file" class="file-input file-input-bordered" id="imageUpload" name="file"><br>
+                      <input type="file" class="file-input file-input-sm md:file-input-md file-input-bordered" id="imageUpload" name="file"><br>
                     </div>
                     
                   </div>

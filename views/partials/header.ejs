@@ -93,10 +93,10 @@
       <div class="">
         <label tabindex="0" class="btn btn-secondary btn-circle avatar mx-2">
           <div class="w-10 rounded-full">
-            <% if(loggedInUser == undefined){ %>    
-            <a href="/login"><img src="/images/stock/cat.jpg" /></a>
+            <% if(loggedInUser == undefined){ %>
+            <img src="/images/stock/cat.jpg" />
             <% } else{ %> 
-              <a href="/profile/<%= loggedInUser._id%>"><img src="<%= loggedInUser.profilePhoto %>" /></a>
+              <img src="<%= loggedInUser.profilePhoto %>" />
             <% } %>
           </div>
         </label>

@@ -33,6 +33,8 @@ module.exports = {
           }
           property = await Property.find({ postcode: postcode, streetName: streetName});
           console.log(property)
+
+          const result = await cloudinary.uploader.upload(req.file.path);
     
         //create the review
         const newReview = await Review.create({
@@ -44,8 +46,8 @@ module.exports = {
             tenancyTo: req.body.tenancyTo.split("-").reverse().join("/"),
             title: req.body.title,
             body: req.body.body,
-            image: "",
-            cloudinaryId: "",
+            image: result.secure_url,
+            cloudinaryId: result.public_id,
           });
 
           //add review to property
@@ -54,9 +56,7 @@ module.exports = {
             { $push: { reviews: newReview.id } },
           );
 
-         // If an image has been uploaded by the user, add the image to the review and corresponding property
-        if(req.file !== undefined){
-          const result = await cloudinary.uploader.upload(req.file.path);
+         // add the image to the review and corresponding property
           await Property.findOneAndUpdate(
             { _id: property[0]._id },
             {
@@ -64,18 +64,8 @@ module.exports = {
               reviewId: newReview.id,
               url: result.secure_url,
               cloudinaryId: result.public_id,
-              }}
-            }
-          )
-          await Review.findOneAndUpdate(
-            { _id: newReview.id },
-            { $set: {
-              image: result.secure_url,
-              cloudinaryId: result.public_id,
-              }},
-          );
-         }
-        
+              }}})
+          
         console.log("Review has been added!");
         res.redirect(`/property/${property[0].id}`);
       } catch (err) {
@@ -85,14 +75,14 @@ module.exports = {
     deleteReview: async (req, res) => {
       try {
         const review = await Review.findById({ _id: req.params.id });
-        if(review.cloudinaryId != ""){
-          await cloudinary.uploader.destroy(review.cloudinaryId);
-        }
+        await cloudinary.uploader.destroy(review.cloudinaryId);
         await Review.deleteOne({ _id: req.params.id });
+
         // update property document
         await Property.updateOne({_id: review.propertyId}, { $pull: { images: { reviewId: req.params.id }} });
         await Property.updateOne({_id: review.propertyId}, { $pull: { reviews: req.params.id } });
         const property = await Property.findById({ _id: review.propertyId });
+        
         // if a property no longer holds a review, delete said property
         if(property.reviews.length == 0){
           await Property.deleteOne({ _id: review.propertyId });

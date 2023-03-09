@@ -7,7 +7,6 @@
       <figure class="h-3/5 bg-base-100">
         
         <div class="carousel w-full">
-          <% if(property[i].images.length > 0 ) {%>
           <% for(var j=0; j<property[i].images.length; j++) {%>
           <div id="<%= property[i].images[j].cloudinaryId%>" class="carousel-item relative w-full">
             <img src="<%= property[i].images[j].url%>" class="rounded-t-2xl" />
@@ -32,12 +31,6 @@
             </div>
           </div>          
           <% } %>
-        <% } else{%>
-          <div class="carousel-item relative w-full">
-            <!-- need image to fill container -->
-            <img src="/images/stock/bedroom.jpg" alt="Shoes"  class="rounded-t-2xl"/>
-          </div> 
-        <% } %>
         </div>
         </figure>
       
