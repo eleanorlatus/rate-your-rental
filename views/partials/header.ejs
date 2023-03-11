@@ -60,7 +60,7 @@
         <label tabindex="0" class="btn btn-secondary btn-circle avatar mx-2">
           <div class="w-10 rounded-full">
             <% if(loggedInUser == undefined){ %>    
-            <a href="/"><img src="/images/stock/cat.jpg" /></a>
+            <a href="/"><img src="/images/stock/house-icon.png" /></a>
             <% } else{ %> 
               <a href="/profile/<%= loggedInUser._id%>"><img src="<%= loggedInUser.profilePhoto %>" /></a>
             <% } %>

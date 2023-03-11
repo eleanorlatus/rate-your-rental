@@ -21,21 +21,52 @@ module.exports = {
       },
   createReview: async (req, res) => {
       try {
-        const streetName = req.body.streetName.split(" ").map((x)=>x[0].toUpperCase() + x.slice(1)).join(" ")
-        const postcode = req.body.postcode.toUpperCase()
-          // check if property already exists in the DB, if not then create one
-          let property = await Property.find({ postcode: postcode, streetName: streetName});
-          if(property.length == 0){
-            await Property.create({
-              streetName: streetName,
-              postcode: postcode
-            });
-          }
-          property = await Property.find({ postcode: postcode, streetName: streetName});
-          console.log(property)
 
-          const result = await cloudinary.uploader.upload(req.file.path);
+
+          const validationErrors = [];
+          let result = ""
     
+    // error message for no tenancy dates
+    if(req.body.streetName = " " ){
+      validationErrors.push({ msg: "Please add the property's street name" });
+    } if(req.body.postcode = " " ){
+      validationErrors.push({ msg: "Please add the property's postcode" });
+    } if(req.body.tenancyTo = " " ){
+      validationErrors.push({ msg: "Please add the start date of your tenancy" });
+    } if(req.body.tenancyFrom = " " ){
+      validationErrors.push({ msg: "Please add the end date of your tenancy" });
+    } if(req.body.title = " " ){
+      validationErrors.push({ msg: "Please add a review title" });
+    } if(req.body.body = " " ){
+      validationErrors.push({ msg: "Please add a review body" });
+    }
+
+    // error message for image upload
+    if(req.file != undefined){
+      result = await cloudinary.uploader.upload(req.file.path);
+    }else{
+      validationErrors.push({ msg: "Please upload an image" });
+    }
+
+    // if any error messages refresh page
+    if (validationErrors.length) {
+      req.flash("errors", validationErrors);
+      return res.redirect("/reviews");
+    }
+
+
+    const streetName = req.body.streetName.split(" ").map((x)=>x[0].toUpperCase() + x.slice(1)).join(" ")
+    const postcode = req.body.postcode.toUpperCase()
+      // check if property already exists in the DB, if not then create one
+      let property = await Property.find({ postcode: postcode, streetName: streetName});
+      if(property.length == 0){
+        await Property.create({
+          streetName: streetName,
+          postcode: postcode
+        });
+      }
+      property = await Property.find({ postcode: postcode, streetName: streetName});
+      console.log(property)
         //create the review
         const newReview = await Review.create({
             user: req.user.id,
