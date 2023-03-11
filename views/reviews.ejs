@@ -1,26 +1,19 @@
 <%- include('partials/header') -%>
 
-<!-- <div class="hero"></div>
-<div class="hero-content flex-col lg:flex-row-reverse">
-<div class="card flex-shrink-0 w-full shadow-2xl bg-base-200">
-<div class="card-body">
-<h1 class="lock uppercase tracking-wide text-gray-900 text-2xl font-bold mb-2 mx-auto">create your review</h1>
-
-</div>
-</div>
-</div>
-</div>
- -->
-
-
 <div class="hero min-h-screen" style="background-image: url(/images/street.jpg);">
     <div class="hero-overlay bg-opacity-20"></div>
-        <div class="hero-content flex-col lg:flex-row-reverse">
+        <div class="hero-content flex-col max-w-xl">
+
           <div class="card flex-shrink-0 w-full shadow-2xl bg-base-200">
-            <div class="card-body">
-              <h1 class="lock uppercase tracking-wide text-gray-900 text-2xl font-bold mb-2 mx-auto">create your review</h1>
-              
-              </div>
+          <div class="card-body">
+            <h1 class="block uppercase tracking-wide text-gray-700 text-xl font-bold mb-2 mx-auto">Create your review</h1>
+            <p class="tracking-wide text-gray-700 text-base mb-2">This is your chance to share your honest opinion of your rental property, include information such as the facilities, condition of the property, location and how well you were treated by your landlord.</p>
+            <p class=" tracking-wide text-gray-700 text-base mb-2">Please remember that the review will be publically available so don't include any personal information.</p>
+            <p class=" tracking-wide text-gray-700 text-sm mb-2">Note: all fields must be completed, including an image upload</p>
+          </div>
+          </div>
+
+          <div class="card flex-shrink-0 w-full shadow-2xl bg-base-200">
             <div class="card-body">
               <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
                 <div class="alert alert-danger"><%= el.msg %></div>

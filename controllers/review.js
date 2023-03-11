@@ -25,22 +25,22 @@ module.exports = {
 
           const validationErrors = [];
           let result = ""
-    
+    console.log(req.body)
+    console.log(validationErrors)
     // error message for no tenancy dates
-    if(req.body.streetName = " " ){
+    if(!req.body.streetName){
       validationErrors.push({ msg: "Please add the property's street name" });
-    } if(req.body.postcode = " " ){
+    } if(!req.body.postcode){
       validationErrors.push({ msg: "Please add the property's postcode" });
-    } if(req.body.tenancyTo = " " ){
+    } if(!req.body.tenancyTo){
       validationErrors.push({ msg: "Please add the start date of your tenancy" });
-    } if(req.body.tenancyFrom = " " ){
+    } if(!req.body.tenancyFrom){
       validationErrors.push({ msg: "Please add the end date of your tenancy" });
-    } if(req.body.title = " " ){
+    } if(!req.body.title){
       validationErrors.push({ msg: "Please add a review title" });
-    } if(req.body.body = " " ){
+    } if(!req.body.body){
       validationErrors.push({ msg: "Please add a review body" });
     }
-
     // error message for image upload
     if(req.file != undefined){
       result = await cloudinary.uploader.upload(req.file.path);
