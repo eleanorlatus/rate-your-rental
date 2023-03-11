@@ -62,7 +62,7 @@
             <% if(loggedInUser == undefined){ %>    
             <a href="/"><img src="/images/stock/house-icon.png" /></a>
             <% } else{ %> 
-              <a href="/profile/<%= loggedInUser._id%>"><img src="<%= loggedInUser.profilePhoto %>" /></a>
+              <a href="/profile/<%= loggedInUser.userName%>"><img src="<%= loggedInUser.profilePhoto %>" /></a>
             <% } %>
           </div>
         </label>
@@ -83,9 +83,9 @@
         <li class="mx-1"><a href="/login">Log in</a></li>
         <% } else{ %> 
         <!-- dropdown if logged in -->
-        <li class="mx-1"><a href="/profile/<%= loggedInUser._id%>">Profile</a></li>
         <li class="mx-1"><a href="/feed">Feed</a></li>
         <li class="mx-1"><a href="/reviews">Create review</a></li>
+        <li class="mx-1"><a href="/profile/<%= loggedInUser.userName%>">Profile</a></li>
         <li class="mx-1"><a href="/edit">Edit profile</a></li>
         <li class="mx-1"><a href="/logout">Log out</a></li>
         <% } %>

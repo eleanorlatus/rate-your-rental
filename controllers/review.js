@@ -7,7 +7,6 @@ module.exports = {
     try {
       const property = await Property.find().sort({ createdAt: "desc" }).lean();
       res.render("feed.ejs", {property: property, loggedInUser: req.user});
-      console.log(property[0].images)
     } catch (err) {
       console.log(err);
     }
@@ -15,19 +14,16 @@ module.exports = {
   getReviewPage: async (req, res) => {
         try {
           res.render("reviews.ejs", { loggedInUser: req.user});
+          console.log(req.body)
         } catch (err) {
           console.log(err);
         }
       },
   createReview: async (req, res) => {
       try {
-
-
-          const validationErrors = [];
-          let result = ""
-    console.log(req.body)
-    console.log(validationErrors)
-    // error message for no tenancy dates
+    const validationErrors = [];
+    let result = ""
+    // error message for form
     if(!req.body.streetName){
       validationErrors.push({ msg: "Please add the property's street name" });
     } if(!req.body.postcode){
@@ -47,13 +43,11 @@ module.exports = {
     }else{
       validationErrors.push({ msg: "Please upload an image" });
     }
-
     // if any error messages refresh page
     if (validationErrors.length) {
       req.flash("errors", validationErrors);
       return res.redirect("/reviews");
     }
-
 
     const streetName = req.body.streetName.split(" ").map((x)=>x[0].toUpperCase() + x.slice(1)).join(" ")
     const postcode = req.body.postcode.toUpperCase()

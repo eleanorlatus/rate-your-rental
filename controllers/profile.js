@@ -6,10 +6,10 @@ const User = require("../models/User.js");
 module.exports = {
     getProfile: async (req, res) => {
         try {
-          const user = await User.findById(req.params.id);
-          const reviews = await Review.find({ user: user.id });
-          console.log(req.user)
+          const user = await User.findOne({userName: req.params.username}).lean();
+          const reviews = await Review.find({ user: user._id });
           console.log(reviews)
+          console.log(user)
           res.render("profile.ejs", { review: reviews, user: user, loggedInUser: req.user });
         } catch (err) {
           console.log(err);
