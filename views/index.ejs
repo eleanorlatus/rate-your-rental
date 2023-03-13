@@ -15,22 +15,19 @@
       <a href="/signup"><button class="btn btn-sm btn-primary">Sign up today</button></a>
       <a href="/feed"><button class="btn btn-sm btn-primary">See reviews</button></a>
       <% } %>
-      <p class="<% if(loggedInUser == undefined){ %>pt-3<% } %>">Our mission is to empower renters in the UK to make informed decisions and elevate their rental experience. We aim to provide a platform where renters can openly and honestly share their experiences with properties and landlords, while fostering a supportive community of like-minded individuals. Through our platform, we strive to promote transparency and accountability in the rental industry, ultimately benefiting all renters in the UK.</p>
-
-
-      <!-- <form class="search--form pt-4" action="/property/search" method="GET">
-        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-property-address">
-          Find your next property today!
-        </label>
-        <input type="text" placeholder="Search" class="input input-sm input-bordered input-primary w-full max-w-xs" name="address"/>
-        <button class="search--btn" type="submit">
-            <i class="search--icon fa-solid fa-magnifying-glass"></i>
-        </button>
-    </form> -->
-
-    <form class="search--form" action="/property/search/property" method="GET">
+      <p class="<% if(loggedInUser == undefined){ %>pt-3<% } %>">Our mission is to empower renters in the UK to make informed decisions and elevate their rental experience. We aim to provide a platform where renters can openly and honestly share their experiences with properties and landlords, while fostering a supportive community of like-minded individuals. Through our platform, we strive to promote transparency and accountability in the rental industry, ultimately benefiting all renters in the UK.</p><br>
+      <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
+        <div class="alert alert-danger"><%= el.msg %></div>
+        <% }) %> <% } %> <% if (locals.messages.info) { %> <%
+        messages.info.forEach( el => { %>
+        <div class="alert alert-info"><%= el.msg %></div>
+        <% }) %> <% } %>
+    <form class="search--form pt-4" action="/property/search/property" method="GET">
+      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-property-address">
+        Find your next property today!
+      </label>
       <input
-          class="search--input"
+          class="input input-sm input-bordered input-primary w-full max-w-xs"
           type="text"
           name="property"
           placeholder="Search"

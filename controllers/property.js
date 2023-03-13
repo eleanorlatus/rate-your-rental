@@ -14,11 +14,17 @@ module.exports = {
       },
       searchProperty: async (req, res) => {
         try {
-        console.log(req.query)
         const property = await Property.findOne({streetName : req.query.property})
-        const review = await Review.find({ propertyId: property._id}).populate("user").sort({ tenancyFrom: "desc" }).lean();
-        console.log(property)
-        res.render("property.ejs", { property: property, review: review, loggedInUser: req.user});
+        if(property != null){
+          const review = await Review.find({ propertyId: property._id}).populate("user").sort({ tenancyFrom: "desc" }).lean();
+          res.render("property.ejs", { property: property, review: review, loggedInUser: req.user});
+        }
+        else{
+          const validationErrors = [];
+          validationErrors.push({ msg: "Property doesn't exist yet" });
+          req.flash("errors", validationErrors);
+          return res.redirect("/");
+        }
         } catch (err) {
           console.log(err);
         }
