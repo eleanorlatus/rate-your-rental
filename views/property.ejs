@@ -26,7 +26,7 @@
       <%} else{%>
        col-span-12
        <% }%>"> <!-- posted by and tenancy dates-->
-      <p>Review posted by <a href="/profile/<%= review[i].user._id%>"><%= review[i].user.userName%></a></p>
+      <p>Review posted by <a href="/profile/<%= review[i].user.userName%>"><%= review[i].user.userName%></a></p>
         <% if(review[i].tenancyFrom && review[i].tenancyTo != "") {%>
           <p>Tenancy from <%= review[i].tenancyFrom%> to <%= review[i].tenancyTo%></p>
         <% } %>

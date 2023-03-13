@@ -3165,6 +3165,14 @@ html {
   font-size: 0.875rem;
 }
 
+.input-sm {
+  height: 2rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 2rem;
+}
+
 .menu-horizontal {
   display: inline-flex;
   width: -moz-max-content;
@@ -3480,6 +3488,10 @@ html {
   max-width: 36rem;
 }
 
+.max-w-xs {
+  max-width: 20rem;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -3555,6 +3567,10 @@ html {
 
 .gap-6 {
   gap: 1.5rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .self-center {
@@ -3670,6 +3686,10 @@ html {
 
 .pt-2 {
   padding-top: 0.5rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
 }
 
 .text-center {
@@ -3993,6 +4013,10 @@ a:hover, i:hover{
 
   .lg\:max-w-md {
     max-width: 28rem;
+  }
+
+  .lg\:max-w-lg {
+    max-width: 32rem;
   }
 
   .lg\:grid-cols-2 {
