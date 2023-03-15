@@ -51,7 +51,17 @@
       <div class="flex-none hidden lg:block">
         <div class="">
           <div class="form bg-base-300 mr-1">
-            <input type="text" placeholder="Search" class="input input-bordered" />
+            <form class="search--form" action="/property/search/property" method="GET">
+              <input
+                  class="input input-bordered"
+                  type="text"
+                  name="property"
+                  placeholder="Search"
+              >
+              <button class="search--btn" type="submit">
+                  <i class="search--icon fa-solid fa-magnifying-glass"></i>
+              </button>
+          </form>
           </div>
         </div>
       </div>
@@ -94,7 +104,7 @@
         <label tabindex="0" class="btn btn-secondary btn-circle avatar mx-2">
           <div class="w-10 rounded-full">
             <% if(loggedInUser == undefined){ %>
-            <img src="/images/stock/cat.jpg" />
+            <img src="/images/stock/house-icon.png" />
             <% } else{ %> 
               <img src="<%= loggedInUser.profilePhoto %>" />
             <% } %>

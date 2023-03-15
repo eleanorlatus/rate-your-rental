@@ -23,7 +23,7 @@ module.exports = {
           const validationErrors = [];
           validationErrors.push({ msg: "Property doesn't exist yet" });
           req.flash("errors", validationErrors);
-          return res.redirect("/");
+          return res.redirect("/feed");
         }
         } catch (err) {
           console.log(err);

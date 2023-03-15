@@ -21,7 +21,7 @@
 <% for(var i=0; i<review.length; i++) {%>
 <div class="border-b-2 border-primary-focus px-2 py-4 lg:px-8 lg:py-6"> <!-- outer review div-->
   <div class="grid grid-cols-12">
-    <div class="pb-2 <%if(review[i].user._id == loggedInUser.id){ %>
+    <div class="pb-2 <%if(loggedInUser != undefined && review[i].user._id == loggedInUser.id){ %>
       col-span-10
       <%} else{%>
        col-span-12
@@ -32,7 +32,7 @@
         <% } %>
         </div>
         <div class="pb-2 col-start-12 justify-self-end"> 
-        <%if(review[i].user._id == loggedInUser.id){ %>
+        <%if(loggedInUser != undefined && review[i].user._id == loggedInUser.id){ %>
           <form
             action="/reviews/deleteReview/<%= review[i]._id %>?_method=DELETE"
             method="POST"

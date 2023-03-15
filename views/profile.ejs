@@ -2,7 +2,7 @@
 <div class="m-4">
 <!-- heading -->
 <div>
-<%if(user._id == loggedInUser.id){ %>
+<%if(loggedInUser != undefined && user._id == loggedInUser.id){ %>
 <span class="text-3xl font-bold underline underline-offset-4 pb-2">Your reviews</span>
 <% } else{%>
   <span class="text-3xl font-bold underline underline-offset-4 pb-2"><%= user.userName%>'s reviews</span>
@@ -23,7 +23,7 @@
             <!-- address and tenancy dates-->
             <div class="grid grid-cols-12">
               <div class="pb-2
-              <%if(review[i].user._id == loggedInUser.id){ %>
+              <%if(loggedInUser != undefined && review[i].user._id == loggedInUser.id){ %>
                col-span-10
                <%} else{%>
                 col-span-12
@@ -33,7 +33,7 @@
                 <h3 class="text-l font-bold pb-2">Review for <a href="/property/<%= review[i].propertyId%>"><%= review[i].streetName%>, <%= review[i].postcode%></a></h3>
                     <p>Tenancy from <%= review[i].tenancyFrom%> to <%= review[i].tenancyTo%></p>
                   </div>
-                  <%if(review[i].user._id == loggedInUser.id){ %>
+                  <%if(loggedInUser != undefined && review[i].user._id == loggedInUser.id){ %>
                     <div class="col-start-12 justify-self-end"> 
                     <form
                       action="/profile/deleteReview/<%= review[i]._id %>?_method=DELETE"
