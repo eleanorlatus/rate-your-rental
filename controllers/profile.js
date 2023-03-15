@@ -18,13 +18,19 @@ module.exports = {
       deleteReview: async (req, res) => {
         try {
           const review = await Review.findById({ _id: req.params.id });
-          if(review.cloudinaryId != ""){
-            await cloudinary.uploader.destroy(review.cloudinaryId);
-          }
+          
+          await cloudinary.uploader.destroy(review.cloudinaryId);
           await Review.deleteOne({ _id: req.params.id });
-          console.log(review)
-          await Property.updateOne({_id: review.propertyId}, { $pull: { images: { reviewId: req.params.id } } });
-          res.redirect(`/profile/${req.user.id}`);
+
+        // update property document
+        await Property.updateOne({_id: review.propertyId}, { $pull: { images: { reviewId: req.params.id }} });
+        await Property.updateOne({_id: review.propertyId}, { $pull: { reviews: req.params.id } });
+        const property = await Property.findById({ _id: review.propertyId });
+        // if a property no longer holds a review, delete said property
+        if(property.reviews.length == 0){
+          await Property.deleteOne({ _id: review.propertyId });
+        }
+          res.redirect(`/profile/${req.user.userName}`);
         } catch (err) {
           res.redirect("/");
         }

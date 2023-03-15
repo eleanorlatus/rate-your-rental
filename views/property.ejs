@@ -6,11 +6,11 @@
         <h1 class="text-2xl font-bold"> <%= property.streetName%>, <%= property.postcode%></h1>
     </div>
 <!-- images in grid-->
-<div class="flex flex-col lg:flex-row justify-evenly py-6 gap-6 border-b-2 border-primary-focus">
+<div class="grid gap-4 md:grid-cols-2 border-b-2 border-primary-focus">
   <% for(var i=0; i<review.length; i++) {%>
     <!-- image -->
     <% if(review[i].image) {%>
-    <div class="sm:mx-4 md:mx-0 lg:w-1/2">
+    <div class="w-full">
       <img src="<%= review[i].image%>" class="w-full">
       <p>Image posted by <%= review[i].user.userName%></p>
   </div>

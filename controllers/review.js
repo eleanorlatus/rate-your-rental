@@ -111,7 +111,7 @@ module.exports = {
         // if a property no longer holds a review, delete said property
         if(property.reviews.length == 0){
           await Property.deleteOne({ _id: review.propertyId });
-          res.redirect(`/profile/${req.user.id}`);
+          res.redirect(`/profile/${req.user.userName}`);
         } else{
           res.redirect(`/property/${property.id}`);
         }

@@ -49,7 +49,6 @@
         </div>
       <!-- search bar (only on lg)-->
       <div class="flex-none hidden lg:block">
-        <div class="">
           <div class="form bg-base-300 mr-1">
             <form class="search--form" action="/property/search/property" method="GET">
               <input
@@ -63,7 +62,6 @@
               </button>
           </form>
           </div>
-        </div>
       </div>
       <!-- avatar-->
       <div class="">
@@ -89,10 +87,28 @@
         
         <!-- dropdown if not logged in -->
         <% if(loggedInUser == undefined){ %>          
-        <li class="mx-1"><a href="/signup">Sign up</a></li>
+          <li class="mx-1">
+            <form class="search--form" action="/property/search/property" method="GET">
+              <input
+                  class="border-b-1"
+                  type="text"
+                  name="property"
+                  placeholder="Search"
+              />
+          </form></li>
+          <li class="mx-1"><a href="/signup">Sign up</a></li>
         <li class="mx-1"><a href="/login">Log in</a></li>
         <% } else{ %> 
         <!-- dropdown if logged in -->
+        <li class="mx-1">
+          <form class="search--form" action="/property/search/property" method="GET">
+            <input
+                class="border-b-1"
+                type="text"
+                name="property"
+                placeholder="Search"
+            />
+        </form></li>
         <li class="mx-1"><a href="/feed">Feed</a></li>
         <li class="mx-1"><a href="/reviews">Create review</a></li>
         <li class="mx-1"><a href="/profile/<%= loggedInUser.userName%>">Profile</a></li>
