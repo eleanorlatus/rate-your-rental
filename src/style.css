@@ -56,3 +56,9 @@ a:hover, i:hover{
   gap: 1rem;
   padding: 1rem;
 }
+
+@media (min-width: 1280px) {
+  div.index{
+    height: 900px;
+  }
+}

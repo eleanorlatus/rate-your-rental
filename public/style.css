@@ -3468,6 +3468,10 @@ html {
   width: 24rem;
 }
 
+.w-4\/5 {
+  width: 80%;
+}
+
 .w-72 {
   width: 18rem;
 }
@@ -3478,26 +3482,6 @@ html {
 
 .w-52 {
   width: 13rem;
-}
-
-.w-4\/12 {
-  width: 33.333333%;
-}
-
-.w-3\/12 {
-  width: 25%;
-}
-
-.w-64 {
-  width: 16rem;
-}
-
-.w-80 {
-  width: 20rem;
-}
-
-.w-4\/5 {
-  width: 80%;
 }
 
 .max-w-lg {
@@ -3577,10 +3561,6 @@ html {
   justify-content: space-between;
 }
 
-.justify-around {
-  justify-content: space-around;
-}
-
 .justify-evenly {
   justify-content: space-evenly;
 }
@@ -3593,8 +3573,8 @@ html {
   gap: 0.5rem;
 }
 
-.gap-6 {
-  gap: 1.5rem;
+.gap-7 {
+  gap: 1.75rem;
 }
 
 .self-center {
@@ -3605,8 +3585,8 @@ html {
   justify-self: end;
 }
 
-.rounded-lg {
-  border-radius: 0.5rem;
+.justify-self-center {
+  justify-self: center;
 }
 
 .rounded-full {
@@ -3646,16 +3626,16 @@ html {
   --tw-bg-opacity: 0.2;
 }
 
+.p-5 {
+  padding: 1.25rem;
+}
+
 .p-2 {
   padding: 0.5rem;
 }
 
 .p-4 {
   padding: 1rem;
-}
-
-.p-5 {
-  padding: 1.25rem;
 }
 
 .px-4 {
@@ -3686,11 +3666,6 @@ html {
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-}
-
-.py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
 }
 
 .px-3 {
@@ -3870,12 +3845,13 @@ a:hover, i:hover{
   padding: 1rem;
 }
 
-@media (min-width: 640px) {
-  .sm\:mx-4 {
-    margin-left: 1rem;
-    margin-right: 1rem;
+@media (min-width: 1280px) {
+  div.index{
+    height: 900px;
   }
+}
 
+@media (min-width: 640px) {
   .sm\:py-4 {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -3893,17 +3869,16 @@ a:hover, i:hover{
     margin-bottom: 1rem;
   }
 
-  .md\:mx-0 {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-
   .md\:mb-0 {
     margin-bottom: 0px;
   }
 
   .md\:hidden {
     display: none;
+  }
+
+  .md\:w-full {
+    width: 100%;
   }
 
   .md\:w-2\/3 {
@@ -3916,10 +3891,6 @@ a:hover, i:hover{
 
   .md\:w-1\/2 {
     width: 50%;
-  }
-
-  .md\:w-full {
-    width: 100%;
   }
 
   .md\:max-w-md {
@@ -4004,24 +3975,16 @@ a:hover, i:hover{
     grid-column-start: 2;
   }
 
+  .lg\:mb-0 {
+    margin-bottom: 0px;
+  }
+
   .lg\:block {
     display: block;
   }
 
   .lg\:grid {
     display: grid;
-  }
-
-  .lg\:w-1\/2 {
-    width: 50%;
-  }
-
-  .lg\:w-full {
-    width: 100%;
-  }
-
-  .lg\:max-w-full {
-    max-width: 100%;
   }
 
   .lg\:max-w-lg {
@@ -4042,6 +4005,18 @@ a:hover, i:hover{
 
   .lg\:flex-row-reverse {
     flex-direction: row-reverse;
+  }
+
+  .lg\:content-center {
+    align-content: center;
+  }
+
+  .lg\:content-end {
+    align-content: flex-end;
+  }
+
+  .lg\:content-between {
+    align-content: space-between;
   }
 
   .lg\:border-b-2 {
@@ -4065,7 +4040,70 @@ a:hover, i:hover{
 }
 
 @media (min-width: 1280px) {
+  .xl\:w-11\/12 {
+    width: 91.666667%;
+  }
+
+  .xl\:max-w-3xl {
+    max-width: 48rem;
+  }
+
+  .xl\:max-w-7xl {
+    max-width: 80rem;
+  }
+
   .xl\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .xl\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .xl\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .xl\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .xl\:btn-lg
+    .btn.loading:before {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+
+  .xl\:btn-lg {
+    height: 4rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    min-height: 4rem;
+    font-size: 1.125rem;
+  }
+
+  .btn-square:where(.xl\:btn-lg) {
+    height: 4rem;
+    width: 4rem;
+    padding: 0px;
+  }
+
+  .btn-circle:where(.xl\:btn-lg) {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 9999px;
+    padding: 0px;
+  }
+
+  .xl\:input-md {
+    height: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    line-height: 2;
   }
 }
