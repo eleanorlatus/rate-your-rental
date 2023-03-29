@@ -57,8 +57,22 @@ a:hover, i:hover{
   padding: 1rem;
 }
 
-@media (min-width: 1280px) {
-  div.index{
-    height: 900px;
+/* md */
+@media (min-width: 768px) {
+  p{
+    font-size: 1.25rem; /* 20px */
+line-height: 1.75rem; /* 28px */
+  }
+}
+
+/* 2-xl */
+@media (min-width: 1536px) {
+  .navbar li{
+    font-size: 5rem; 
+    line-height: 2.5rem;
+  }
+
+  .index-container{
+    height: 850px;
   }
 }

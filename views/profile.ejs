@@ -30,7 +30,7 @@
                 <% }%>
                lg:col-span-5">
                 <!-- tenancy dates-->
-                <h3 class="text-l font-bold pb-2">Review for <a href="/property/<%= review[i].propertyId%>"><%= review[i].streetName%>, <%= review[i].postcode%></a></h3>
+                <h3 class="text-lg 2xl:text-xl font-bold pb-2">Review for <a href="/property/<%= review[i].propertyId%>"><%= review[i].streetName%>, <%= review[i].postcode%></a></h3>
                     <p>Tenancy from <%= review[i].tenancyFrom%> to <%= review[i].tenancyTo%></p>
                   </div>
                   <%if(loggedInUser != undefined && review[i].user._id == loggedInUser.id){ %>
