@@ -70,7 +70,7 @@
         <label tabindex="0" class="btn btn-secondary btn-circle avatar mx-2">
           <div class="w-10 rounded-full">
             <% if(loggedInUser == undefined){ %>    
-            <a href="/"><img src="/images/stock/house-icon.png" /></a>
+            <a href="/"><img src="/images/stock/profile-icon.png"/></a>
             <% } else{ %> 
               <a href="/profile/<%= loggedInUser.userName%>"><img src="<%= loggedInUser.profilePhoto %>" /></a>
             <% } %>
@@ -98,7 +98,8 @@
                   placeholder="Search by postcode"
               />
           </form></li>
-          <li class="mx-1"><a href="/signup">Sign up</a></li>
+        <li class="mx-1"><a href="/feed">Feed</a></li>
+        <li class="mx-1"><a href="/signup">Sign up</a></li>
         <li class="mx-1"><a href="/login">Log in</a></li>
         <% } else{ %> 
         <!-- dropdown if logged in -->
@@ -122,7 +123,7 @@
         <label tabindex="0" class="btn btn-secondary btn-circle avatar mx-2">
           <div class="w-10 rounded-full">
             <% if(loggedInUser == undefined){ %>
-            <img src="/images/stock/house-icon.png" />
+            <img src="/images/stock/profile-icon.png" />
             <% } else{ %> 
               <img src="<%= loggedInUser.profilePhoto %>" />
             <% } %>

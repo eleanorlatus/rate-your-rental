@@ -24,6 +24,10 @@ a{
   color: rgb(223, 167, 60)
 }
 
+a.black{
+  color: black
+}
+
 a:hover, i:hover{
   color: rgb(187, 137, 43)
 }
