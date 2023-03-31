@@ -12,9 +12,15 @@ module.exports = {
     }
   },
   getReviewPage: async (req, res) => {
+    try {
+      res.render("reviews.ejs", { loggedInUser: req.user, streetName: "", postcode: ""});
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getReviewPageFromProperty: async (req, res) => {
         try {
-          res.render("reviews.ejs", { loggedInUser: req.user});
-          console.log(req.body)
+          res.render("reviews.ejs", { loggedInUser: req.user, streetName: req.params.streetName, postcode: req.params.postcode});
         } catch (err) {
           console.log(err);
         }

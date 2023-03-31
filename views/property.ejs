@@ -51,7 +51,7 @@
 <% if(loggedInUser == undefined){ %>
 <h3 class="text-xl font-bold pb-2">Want to leave a review for this property? <a href="/login" class="underline underline-offset-4 text-primary-focus">Log in</a> or <a href="/signup" class="underline underline-offset-4 text-primary-focus">create an account</a> today.</h3>
 <% } else{ %> 
-  <h3 class="text-xl font-bold pb-2">Want to leave a review for this property? <a href="/reviews" class="underline underline-offset-4 text-primary-focus">Create a review</a> today.</h3>
+  <h3 class="text-xl font-bold pb-2">Want to leave a review for this property? <a href="/reviews/<%= property.streetName%>/<%= property.postcode%>" class="underline underline-offset-4 text-primary-focus">Create a review</a> today.</h3>
 <% } %>
 </div>
 </div>
