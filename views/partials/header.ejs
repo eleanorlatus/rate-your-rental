@@ -35,6 +35,7 @@
           <li class="mx-1"><a href="/feed">Feed</a></li>
           <% if(loggedInUser != undefined){ %>
           <li class="mx-1"><a href="/reviews">Create review</a></li>
+          <li class="mx-1"><a href="/profile/edit">Edit profile</a></li>
           <% } %>
           <!-- show if not logged in -->
           <% if(loggedInUser == undefined){ %>          
@@ -112,7 +113,7 @@
         <li class="mx-1"><a href="/feed">Feed</a></li>
         <li class="mx-1"><a href="/reviews">Create review</a></li>
         <li class="mx-1"><a href="/profile/<%= loggedInUser.userName%>">Profile</a></li>
-        <li class="mx-1"><a href="/edit">Edit profile</a></li>
+        <li class="mx-1"><a href="/profile/edit">Edit profile</a></li>
         <li class="mx-1"><a href="/logout">Log out</a></li>
         <% } %>
       </ul>
