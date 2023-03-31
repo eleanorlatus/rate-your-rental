@@ -11,7 +11,7 @@
     <!-- image -->
     <div class="w-full py-2">
       <img src="<%= review[i].image%>" class="w-full">
-      <p>Image posted by <%= review[i].user.userName%></p>
+      <p>Image posted by <a href="/profile/<%= review[i].user.userName%>"><%= review[i].user.userName%></a></p>
   </div>
   <% } %>
 </div>
