@@ -11,6 +11,7 @@ module.exports = {
           console.log(err);
         }
       },
+      
       searchProperty: async (req, res) => {
         try {
         const property = await Property.find({postcode : req.query.postcode.toUpperCase()})

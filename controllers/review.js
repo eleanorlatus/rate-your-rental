@@ -11,6 +11,7 @@ module.exports = {
       console.log(err);
     }
   },
+
   getReviewPage: async (req, res) => {
     try {
       res.render("reviews.ejs", { loggedInUser: req.user, streetName: "", postcode: ""});
@@ -18,6 +19,7 @@ module.exports = {
       console.log(err);
     }
   },
+
   getReviewPageFromProperty: async (req, res) => {
         try {
           res.render("reviews.ejs", { loggedInUser: req.user, streetName: req.params.streetName, postcode: req.params.postcode});
@@ -25,6 +27,7 @@ module.exports = {
           console.log(err);
         }
       },
+
   createReview: async (req, res) => {
       try {
     const validationErrors = [];
@@ -103,6 +106,7 @@ module.exports = {
         console.log(err);
       }
     },
+    
     deleteReview: async (req, res) => {
       try {
         const review = await Review.findById({ _id: req.params.id });

@@ -15,6 +15,7 @@ module.exports = {
           console.log(err);
         }
       },
+
       deleteReview: async (req, res) => {
         try {
           const review = await Review.findById({ _id: req.params.id });
@@ -35,6 +36,7 @@ module.exports = {
           res.redirect("/");
         }
       },
+
       getEditProfile: async (req, res) => {
         try {
         res.render("edit.ejs", {loggedInUser: req.user});
@@ -42,6 +44,7 @@ module.exports = {
           console.log(err);
         }
       },
+      
       editProfile: async (req, res) => {
         try {
           // update profile photo
