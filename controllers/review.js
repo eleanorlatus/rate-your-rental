@@ -6,7 +6,7 @@ module.exports = {
   getFeed: async (req, res) => {
     try {
       const property = await Property.find().sort({ createdAt: "desc" }).lean();
-      const reviews = await Review.find()
+      const reviews = await Review.find().populate("user")
       console.log(reviews)
       res.render("feed.ejs", {property: property, loggedInUser: req.user, reviews: reviews});
     } catch (err) {

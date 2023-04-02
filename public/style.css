@@ -3226,12 +3226,12 @@ html {
   grid-column: span 2 / span 2;
 }
 
-.col-span-12 {
-  grid-column: span 12 / span 12;
-}
-
 .col-span-10 {
   grid-column: span 10 / span 10;
+}
+
+.col-span-12 {
+  grid-column: span 12 / span 12;
 }
 
 .col-start-2 {
@@ -3589,11 +3589,6 @@ html {
   color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
-.text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
 .text-primary-focus {
   --tw-text-opacity: 1;
   color: hsl(var(--pf, var(--p)) / var(--tw-text-opacity));
@@ -3660,7 +3655,7 @@ footer a{
 }
 
 a{
-  color: rgb(223, 167, 60)
+  color: rgb(187, 137, 43)
 }
 
 a.black{
@@ -3668,7 +3663,7 @@ a.black{
 }
 
 a:hover, i:hover{
-  color: rgb(187, 137, 43)
+  color: rgb(140, 100, 26)
 }
 
 .navbar-mobile {

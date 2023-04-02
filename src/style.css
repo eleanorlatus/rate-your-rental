@@ -21,7 +21,7 @@ color: black;
 }
 
 a{
-  color: rgb(223, 167, 60)
+  color: rgb(187, 137, 43)
 }
 
 a.black{
@@ -29,7 +29,7 @@ a.black{
 }
 
 a:hover, i:hover{
-  color: rgb(187, 137, 43)
+  color: rgb(140, 100, 26)
 }
 
 .navbar-mobile {
