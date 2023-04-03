@@ -3348,6 +3348,10 @@ html {
   width: 13rem;
 }
 
+.w-3\/5 {
+  width: 60%;
+}
+
 .max-w-lg {
   max-width: 32rem;
 }

@@ -28,7 +28,7 @@ API_SECRET = `your cloudinary api secret`
 ## Running the application
 ```bash
 npm run build-css
-npm start
+npm run dev
 ```
 
 ## Contributing
