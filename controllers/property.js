@@ -20,8 +20,9 @@ module.exports = {
           validationErrors.push({ msg: "No properties found" });
           req.flash("errors", validationErrors);
         }
-        const review = await Review.find({ propertyId: property._id}).populate("user").sort({ tenancyFrom: "desc" }).lean();
-        res.render("searchResults.ejs", {property: property, review: review, loggedInUser: req.user});
+        const reviews = await Review.find().populate("user")
+        console.log(reviews)
+        res.render("searchResults.ejs", {property: property, reviews: reviews, loggedInUser: req.user});
         } catch (err) {
           console.log(err);
         }

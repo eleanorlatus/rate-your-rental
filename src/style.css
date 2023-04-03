@@ -28,6 +28,10 @@ a.black{
   color: black
 }
 
+a.hover-black:hover{
+  color: black
+}
+
 a:hover, i:hover{
   color: rgb(140, 100, 26)
 }

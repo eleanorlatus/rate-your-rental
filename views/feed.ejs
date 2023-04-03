@@ -18,7 +18,7 @@
       <% for(var l=0; l<reviews.length; l++) {%>
       <%if(reviews[l]._id == property[i].reviews[j]){ %>
       <h3>Review posted by <a href="/profile/<%= reviews[l].user.userName%>"><%= reviews[l].user.userName%></a></h3>
-      <p><%= reviews[l].body.split(" ").slice(0,30).join(" ")%> ...</p><br>
+      <p><a href="/property/<%= property[i]._id%>" class="black hover-black"><%= reviews[l].body.split(" ").slice(0,30).join(" ")%> ...</a></p><br>
     <!-- <p><%= reviews%></p> -->
     <% } %>
     <% } %>
