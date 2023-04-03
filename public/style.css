@@ -3745,6 +3745,10 @@ a:hover, i:hover{
     margin-bottom: 0px;
   }
 
+  .md\:block {
+    display: block;
+  }
+
   .md\:hidden {
     display: none;
   }
