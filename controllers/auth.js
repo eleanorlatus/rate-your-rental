@@ -110,7 +110,7 @@ exports.postSignup = (req, res, next) => {
           if (err) {
             return next(err);
           }
-          res.redirect(`/profile/${req.user.id}`);
+          res.redirect(`/profile/${req.user.userName}`);
         });
       });
     }
