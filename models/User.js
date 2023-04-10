@@ -5,8 +5,8 @@ const UserSchema = new mongoose.Schema({
   userName: { type: String, unique: true },
   email: { type: String, unique: true },
   password: String,
-  profilePhoto: {type: String, default: "https://res.cloudinary.com/di1ru6w5x/image/upload/v1676130247/cat_i0yavv.jpg"},
-  cloudinaryId: {type:String, default: "cat_i0yavv"}
+  profilePhoto: {type: String, default: "https://res.cloudinary.com/di1ru6w5x/image/upload/v1681123931/ekqv0wmzb9rgw4dthzle.png"},
+  cloudinaryId: {type:String, default: "ekqv0wmzb9rgw4dthzle"}
 });
 
 // Password hash middleware.
