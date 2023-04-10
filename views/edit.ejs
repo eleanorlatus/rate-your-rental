@@ -5,7 +5,7 @@
           <div class="card flex-shrink-0 w-full shadow-2xl bg-base-200">
             <div class="card-body">
               <form class="w-full max-w-lg" action="/profile/editProfile" enctype="multipart/form-data" method="POST">
-                <div class="flex flex-wrap -mx-3 mb-6 justify-center">
+                <div class="flex flex-wrap -mx-3 mb-1 justify-center">
                 <h1 class="text-2xl font-bold pb-2">Edit your profile</h1>
                   <!-- change profile photo -->
                   <div class="w-full mb-3 lg:grid grid-cols-3">
@@ -42,6 +42,16 @@
                   </div>
                 </div>
                   </form>
+                  <!-- delete profile -->
+                  <form class="w-full max-w-lg" action="/profile/deleteProfile" enctype="multipart/form-data" method="POST">
+                    <div class="flex flex-wrap -mx-3 justify-center">
+                        <div class="w-full">
+                          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 text-orange-800">Please be sure before pressing this, as it cannot be undone.</label>
+                        <button type="submit" class="btn btn-error w-full">Delete account</button>
+                      </div>
+                    </div>
+                      </form>
+                  
 </div>
 </div>
 </div>

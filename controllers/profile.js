@@ -6,7 +6,7 @@ const User = require("../models/User.js");
 module.exports = {
     getProfile: async (req, res) => {
         try {
-          const user = await User.findOne({userName: req.params.username}).lean();
+          const user = await User.findOne({userName: req.params.userName}).lean();
           const reviews = await Review.find({ user: user._id });
           res.render("profile.ejs", { review: reviews, user: user, loggedInUser: req.user });
         } catch (err) {
@@ -81,6 +81,22 @@ module.exports = {
           res.redirect(`/profile/${userName}`);
         } catch (err) {
           console.log(err);
+        }
+      },
+      deleteProfile: async (req, res) => {
+        try {
+          // delete the user's profile
+          const user = await User.findOne({userName: req.user.userName}).lean();
+          await User.deleteOne({ _id: user._id });
+
+          // delete all corresponding reviews
+          await Review.deleteMany({ user: user._id });
+
+          console.log(`${user.userName} and all connected reviews have been sucessfully deleted`)
+          // redirect to homepage
+          res.redirect("/");
+        } catch (err) {
+          res.redirect(`/profile/${req.user.userName}`);
         }
       },
   };
